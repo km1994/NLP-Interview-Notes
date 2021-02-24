@@ -2,10 +2,13 @@
 
 > 作者：杨夕
 > 
-> 项目地址：https://github.com/km1994/nlp_paper_study
+> 项目地址：https://github.com/km1994/NLP-Interview-Notes
 > 
-> 个人介绍：大佬们好，我叫杨夕，该项目主要是本人在研读顶会论文和复现经典论文过程中，所见、所思、所想、所闻，可能存在一些理解错误，希望大佬们多多指正。
+> 个人论文读书笔记：https://github.com/km1994/nlp_paper_study
+> 
+> 【注：手机阅读可能图片打不开！！！】
 
+![](img/微信截图_20210224224353.png)
 
 ## trick 1：领域词典匹配
 

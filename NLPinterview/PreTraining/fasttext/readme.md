@@ -2,6 +2,10 @@
 
 > 作者：杨夕
 > 
+> 项目地址：https://github.com/km1994/NLP-Interview-Notes
+> 
+> 个人论文读书笔记：https://github.com/km1994/nlp_paper_study
+> 
 > 【注：手机阅读可能图片打不开！！！】
 
 ![](img/fastText.png)

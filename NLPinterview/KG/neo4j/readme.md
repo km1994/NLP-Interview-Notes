@@ -1,6 +1,8 @@
 # 【关于 Neo4j 】 那些你不知道的事
 
 > 作者：吴晓均
+> 
+> 项目地址：https://github.com/km1994/NLP-Interview-Notes
 
 ![](img/微信截图_20210129232419.png)
 
