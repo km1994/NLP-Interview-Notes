@@ -8,7 +8,26 @@
 
 ## 目录
 
-
+- [【关于 Tensorflow 损失函数】 那些你不知道的事](#关于-tensorflow-损失函数-那些你不知道的事)
+  - [目录](#目录)
+  - [一、动机](#一动机)
+  - [二、什么是损失函数？](#二什么是损失函数)
+  - [三、目标函数、损失函数、代价函数之间的关系与区别？](#三目标函数损失函数代价函数之间的关系与区别)
+  - [四、损失函数的类别](#四损失函数的类别)
+    - [4.1 回归模型的损失函数](#41-回归模型的损失函数)
+      - [（1）L1正则损失函数（即绝对值损失函数）](#1l1正则损失函数即绝对值损失函数)
+      - [（2）L2正则损失函数（即欧拉损失函数）](#2l2正则损失函数即欧拉损失函数)
+      - [（3）均方误差（MSE, mean squared error）](#3均方误差mse-mean-squared-error)
+      - [（4）Pseudo-Huber 损失函数](#4pseudo-huber-损失函数)
+    - [4.2 分类模型的损失函数](#42-分类模型的损失函数)
+      - [（1）Hinge损失函数](#1hinge损失函数)
+      - [（2）两类交叉熵（Cross-entropy）损失函数](#2两类交叉熵cross-entropy损失函数)
+      - [（3）Sigmoid交叉熵损失函数](#3sigmoid交叉熵损失函数)
+      - [（4）加权交叉熵损失函数](#4加权交叉熵损失函数)
+      - [（5）Softmax交叉熵损失函数](#5softmax交叉熵损失函数)
+      - [(6) SparseCategoricalCrossentropy vs sparse_categorical_crossentropy](#6-sparsecategoricalcrossentropy-vs-sparse_categorical_crossentropy)
+  - [五、总结](#五总结)
+  - [参考](#参考)
 
 ## 一、动机
 
