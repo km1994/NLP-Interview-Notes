@@ -15,9 +15,63 @@
 ### 一、[【关于 基础算法篇】那些你不知道的事](BasicAlgorithm/)
 
 - [【关于 过拟合和欠拟合】那些你不知道的事](BasicAlgorithm/过拟合和欠拟合.md)
+  - 一、过拟合和欠拟合 是什么？
+  - 二、过拟合/高方差（overfiting / high variance）篇
+    - 2.1 过拟合是什么及检验方法？
+    - 2.2 导致过拟合的原因是什么？
+    - 2.3 过拟合的解决方法是什么？
+  - 三、欠拟合/高偏差（underfiting / high bias）篇
+    - 3.1 欠拟合是什么及检验方法？
+    - 3.2 导致欠拟合的原因是什么？
+    - 3.3 过拟合的解决方法是什么？
 - [【关于 BatchNorm vs LayerNorm】那些你不知道的事](BasicAlgorithm/BatchNormVsLayerNorm.md)
+  - 一、动机篇
+    - 1.1 独立同分布（independent and identically distributed）与白化
+    - 1.2 （ Internal Covariate Shift，ICS）
+    - 1.3 ICS问题带来的后果是什么？
+  - 二、Normalization 篇
+    - 2.1 Normalization 的通用框架与基本思想
+  - 三、Batch Normalization 篇
+    - 3.1 Batch Normalization（纵向规范化）是什么？
+    - 3.2 Batch Normalization（纵向规范化）存在什么问题？
+    - 3.3 Batch Normalization（纵向规范化）适用的场景是什么？
+    - 3.4 BatchNorm 存在什么问题？
+  - 四、Layer Normalization（横向规范化） 篇
+    - 4.1 Layer Normalization（横向规范化）是什么？
+    - 4.2 Layer Normalization（横向规范化）有什么用？
+  - 五、BN vs LN 篇
+  - 六、主流 Normalization 方法为什么有效？
 - [【关于 激活函数】那些你不知道的事](BasicAlgorithm/激活函数.md)
+  - 一、动机篇
+    - 1.1 为什么要有激活函数？
+  - 二、激活函数介绍篇
+    - 2.1 sigmoid 函数篇
+      - 2.1.1 什么是 sigmoid 函数？
+      - 2.1.2 为什么选 sigmoid 函数 作为激活函数？
+      - 2.1.3 sigmoid 函数 有什么缺点？
+    - 2.2 tanh 函数篇
+      - 2.2.1 什么是 tanh 函数？
+      - 2.2.2 为什么选 tanh 函数 作为激活函数？
+      - 2.2.3 tanh 函数 有什么缺点？
+    - 2.3 relu 函数篇
+      - 2.3.1 什么是 relu 函数？
+      - 2.3.2 为什么选 relu 函数 作为激活函数？
+      - 2.3.3 relu 函数 有什么缺点？
+  - 三、激活函数选择篇
 - [【关于 正则化】那些你不知道的事](BasicAlgorithm/正则化.md)
+  - [一、L0，L1，L2正则化 篇](BasicAlgorithm/正则化.md#一l0l1l2正则化-篇)
+    - [1.1 正则化 是什么？](BasicAlgorithm/正则化.md#11-正则化-是什么)
+    - [1.2 什么是 L0 正则化 ？](BasicAlgorithm/正则化.md#12-什么是-l0-正则化-)
+    - [1.3 什么是 L1 （稀疏规则算子 Lasso regularization）正则化 ？](BasicAlgorithm/正则化.md#13-什么是-l1-稀疏规则算子-lasso-regularization正则化-)
+    - [1.4 什么是 L2 正则化（岭回归 Ridge Regression 或者 权重衰减 Weight Decay）正则化 ？](BasicAlgorithm/正则化.md#14-什么是-l2-正则化岭回归-ridge-regression-或者-权重衰减-weight-decay正则化-)
+  - [二、对比篇](BasicAlgorithm/正则化.md#二对比篇)
+    - [2.1 什么是结构风险最小化？](BasicAlgorithm/正则化.md#21-什么是结构风险最小化)
+    - [2.2 从结构风险最小化的角度理解L1和L2正则化](BasicAlgorithm/正则化.md#22-从结构风险最小化的角度理解l1和l2正则化)
+    - [2.3 L1 vs L2](BasicAlgorithm/正则化.md#23-l1-vs-l2)
+  - [三、dropout 篇](BasicAlgorithm/正则化.md#三dropout-篇)
+    - [3.1 什么是 dropout？](BasicAlgorithm/正则化.md#31-什么是-dropout)
+    - [3.2 dropout 在训练和测试过程中如何操作？](BasicAlgorithm/正则化.md#32-dropout-在训练和测试过程中如何操作)
+    - [3.3 dropout 如何防止过拟合?](BasicAlgorithm/正则化.md#33-dropout-如何防止过拟合)
 - [【关于 优化算法及函数】那些你不知道的事](BasicAlgorithm/优化算法及函数.md)
 - [【关于 归一化】那些你不知道的事](BasicAlgorithm/归一化.md)
 - [【关于 判别式（discriminative）模型 vs. 生成式(generative)模型】 那些你不知道的事](BasicAlgorithm/判别式vs生成式.md)
