@@ -96,7 +96,7 @@
 
 ### 3.4 BatchNorm 存在什么问题？
 
-1. BN特别依赖Batch Size；当Batch size很小的适合，BN的效果就非常不理想了。在很多情况下，Batch size大不了，因为你GPU的显存不够。所以，通常会有其他比较麻烦的手段去解决这个问题，比如MegDet的CGBN等；
+1. BN特别依赖Batch Size；当Batch size很小的时候，BN的效果就非常不理想了。在很多情况下，Batch size大不了，因为你GPU的显存不够。所以，通常会有其他比较麻烦的手段去解决这个问题，比如MegDet的CGBN等；
 2. BN对处理序列化数据的网络比如RNN是不太适用的；So，BN的应用领域减少了一半；
 3. BN只在训练的时候用，inference的时候不会用到，因为inference的输入不是批量输入。
 
