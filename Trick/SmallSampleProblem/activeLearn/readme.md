@@ -1,8 +1,10 @@
 # 【关于 主动学习】 那些你不知道的事
 
-> 作者：杨夕
+> 作者：杨夕、芙蕖、李玲、陈海顺、twilight、LeoLRH、JimmyDU、艾春辉、张永泰、金金金
 > 
-> 本文链接：https://github.com/km1994/nlp_paper_study
+> 面筋地址：https://github.com/km1994/NLP-Interview-Notes
+> 
+> 个人笔记：https://github.com/km1994/nlp_paper_study
 > 
 > 个人介绍：大佬们好，我叫杨夕，该项目主要是本人在研读顶会论文和复现经典论文过程中，所见、所思、所想、所闻，可能存在一些理解错误，希望大佬们多多指正。
 > 
