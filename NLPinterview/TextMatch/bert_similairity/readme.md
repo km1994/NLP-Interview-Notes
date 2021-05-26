@@ -24,7 +24,7 @@
 - 解析：c 可一定程度表示整个句子的语义
 - 举例
   - 原文中有提到“ The final hidden state (i.e., output of Transformer) corresponding to this token is used as the aggregate sequence representation for classification tasks.”这句话中的“this token”就是CLS位。
-
+ 
 ## 二、cosine similairity
 
 - 方法：

@@ -17,7 +17,7 @@
 ## 二、Bert 变大篇
 
 ### 2.1 认识 XLNet 么？能不能讲一下？ 和 Bert 的 区别在哪里？
-
+ 
 - AR vs AE
   - AR：只利用到单向 context 的信息（前向或后向）；
   - AE（这里特指 BERT）：Pre-training 阶段引入的 [MASK] 占位符在 Fine-tuning 阶段并不存在；同一个 sequence 如果有多个位置 [MASK]，BERT 假定它们之间是独立的，这与事实不符
