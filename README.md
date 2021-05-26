@@ -1285,4 +1285,4 @@
       - [（4）加权交叉熵损失函数](Tensorflow/loss_study//readme.md#4加权交叉熵损失函数)
       - [（5）Softmax交叉熵损失函数](Tensorflow/loss_study//readme.md#5softmax交叉熵损失函数)
       - [(6) SparseCategoricalCrossentropy vs sparse_categorical_crossentropy](Tensorflow/loss_study//readme.md#6-sparsecategoricalcrossentropy-vs-sparse_categorical_crossentropy)
-  - [五、总结](Tensorflow/loss_study//readme.md#五总结)
+  - [五、总结](Tensorflow/loss_study//readme.md#五总结)   
