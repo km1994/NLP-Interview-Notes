@@ -51,6 +51,8 @@
       - [5.1 【关于 少样本问题】那些你不知道的事](#51-关于-少样本问题那些你不知道的事)
       - [5.2 【关于 脏数据】那些你不知道的事](#52-关于-脏数据那些你不知道的事)
       - [5.3 【关于 炼丹炉】那些你不知道的事](#53-关于-炼丹炉那些你不知道的事)
+      - [5.4 【关于 早停法 EarlyStopping 】那些你不知道的事](#54-关于-早停法-earlystopping-那些你不知道的事)
+      - [5.5 【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](#55-关于-标签平滑法-labelsmoothing-那些你不知道的事)
     - [六、【关于 Python 】那些你不知道的事](#六关于-python-那些你不知道的事)
     - [七、【关于 Tensorflow 】那些你不知道的事](#七关于-tensorflow-那些你不知道的事)
 
@@ -1221,6 +1223,21 @@
 
 - [【关于 batch_size设置】那些你不知道的事](Trick/batch_size/)
   - [一、训练模型时，batch_size的设置，学习率的设置?](Trick/batch_size/readme.md#一训练模型时batch_size的设置学习率的设置)
+
+#### 5.4 [【关于 早停法 EarlyStopping 】那些你不知道的事](Trick/EarlyStopping/)
+
+- [【关于 早停法 EarlyStopping 】那些你不知道的事](Trick/EarlyStopping/)
+  - [一、 为什么要用 早停法 EarlyStopping？](#一-为什么要用-早停法-earlystopping)
+  - [二、 早停法 EarlyStopping 是什么？](#二-早停法-earlystopping-是什么)
+  - [三、早停法 torch 版本怎么实现？](#三早停法-torch-版本怎么实现)
+
+#### 5.5 [【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](Trick/LabelSmoothing/)
+
+- [【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](Trick/LabelSmoothing？/)
+  - [一、为什么要有 标签平滑法 LabelSmoothing？](#一为什么要有-标签平滑法-labelsmoothing)
+  - [二、 标签平滑法 是什么？](#二-标签平滑法-是什么)
+  - [三、 标签平滑法 torch 怎么复现？](#三-标签平滑法-torch-怎么复现)
+
 
 ### 六、[【关于 Python 】那些你不知道的事](python/)
 
