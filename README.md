@@ -1,6 +1,6 @@
 # 【关于 NLP】百问百答
 
-> 作者：杨夕、芙蕖、李玲、陈海顺、twilight、LeoLRH、JimmyDU、艾春辉、张永泰、金金金
+> 作者：杨夕、芙蕖、李玲、陈海顺、twilight、LeoLRH、JimmyDU、张永泰
 > 
 > 面筋地址：https://github.com/km1994/NLP-Interview-Notes
 > 
