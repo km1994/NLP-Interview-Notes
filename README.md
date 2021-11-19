@@ -2,9 +2,17 @@
 
 > 作者：杨夕、芙蕖、李玲、陈海顺、twilight、LeoLRH、JimmyDU、张永泰
 > 
-> 面筋地址：https://github.com/km1994/NLP-Interview-Notes
+> NLP 百面百搭 地址：https://github.com/km1994/NLP-Interview-Notes
 > 
-> 个人笔记：https://github.com/km1994/nlp_paper_study
+> **[手机版NLP百面百搭](https://mp.weixin.qq.com/s?__biz=MzAxMTU5Njg4NQ==&mid=100005719&idx=3&sn=5d8e62993e5ecd4582703684c0d12e44&chksm=1bbff26d2cc87b7bf2504a8a4cafc60919d722b6e9acbcee81a626924d80f53a49301df9bd97&scene=18#wechat_redirect)**
+> 
+> 推荐系统 百面百搭 地址：https://github.com/km1994/RES-Interview-Notes
+> 
+> **[手机版推荐系统百面百搭](https://mp.weixin.qq.com/s/b_KBT6rUw09cLGRHV_EUtw)**
+> 
+> NLP论文学习笔记：https://github.com/km1994/nlp_paper_study
+> 
+> **[手机版NLP论文学习笔记](https://mp.weixin.qq.com/s?__biz=MzAxMTU5Njg4NQ==&mid=100005719&idx=1&sn=14d34d70a7e7cbf9700f804cca5be2d0&chksm=1bbff26d2cc87b7b9d2ed12c8d280cd737e270cd82c8850f7ca2ee44ec8883873ff5e9904e7e&scene=18#wechat_redirect)**
 > 
 
 ![](img/微信截图_20210301212242.png)
@@ -17,11 +25,15 @@
 
 本项目是作者们根据个人面试和经验总结出的自然语言处理(NLP)面试准备的学习笔记与资料，该资料目前包含 自然语言处理各领域的 面试题积累。
 
+> 注：github 网页版 看起来不舒服，可以看 **[手机版NLP百面百搭](https://mp.weixin.qq.com/s?__biz=MzAxMTU5Njg4NQ==&mid=100005719&idx=3&sn=5d8e62993e5ecd4582703684c0d12e44&chksm=1bbff26d2cc87b7bf2504a8a4cafc60919d722b6e9acbcee81a626924d80f53a49301df9bd97&scene=18#wechat_redirect)**
+
+
 ## 目录架构
 
 - [【关于 NLP】百问百答](#关于-nlp百问百答)
   - [介绍](#介绍)
   - [目录架构](#目录架构)
+  - [手机版 NLP 百面百搭](#手机版-nlp-百面百搭)
   - [内容框架](#内容框架)
     - [一、【关于 基础算法篇】那些你不知道的事](#一关于-基础算法篇那些你不知道的事)
     - [二、【关于 机器学习算法篇】那些你不知道的事](#二关于-机器学习算法篇那些你不知道的事)
@@ -53,6 +65,10 @@
       - [5.5 【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](#55-关于-标签平滑法-labelsmoothing-那些你不知道的事)
     - [六、【关于 Python 】那些你不知道的事](#六关于-python-那些你不知道的事)
     - [七、【关于 Tensorflow 】那些你不知道的事](#七关于-tensorflow-那些你不知道的事)
+
+## 手机版 NLP 百面百搭
+
+- **[手机版NLP百面百搭](https://mp.weixin.qq.com/s?__biz=MzAxMTU5Njg4NQ==&mid=100005719&idx=3&sn=5d8e62993e5ecd4582703684c0d12e44&chksm=1bbff26d2cc87b7bf2504a8a4cafc60919d722b6e9acbcee81a626924d80f53a49301df9bd97&scene=18#wechat_redirect)**
 
 ## 内容框架
 
