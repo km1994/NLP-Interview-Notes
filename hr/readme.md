@@ -1,0 +1,2 @@
+- [HR 通常提的一些面试问题是什么？应该怎么回答？](https://www.zhihu.com/question/24192778/answer/631081857)
+- [HR面试经典50题](https://zhuanlan.zhihu.com/p/97230687)

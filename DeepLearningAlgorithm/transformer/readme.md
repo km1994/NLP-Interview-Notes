@@ -11,6 +11,62 @@
 ![](img/Transformer.png)
 > Transformer 常见问题
 
+- [【关于Transformer】那些你不知道的事](#关于transformer那些你不知道的事)
+  - [一、动机篇](#一动机篇)
+    - [1.1 为什么要有 Transformer?](#11-为什么要有-transformer)
+    - [1.2 Transformer 作用是什么？](#12-transformer-作用是什么)
+  - [二、整体结构篇](#二整体结构篇)
+    - [2.1 Transformer 整体结构是怎么样？](#21-transformer-整体结构是怎么样)
+    - [2.2 Transformer-encoder 结构怎么样？](#22-transformer-encoder-结构怎么样)
+    - [2.3 Transformer-decoder 结构怎么样?](#23-transformer-decoder-结构怎么样)
+  - [三、模块篇](#三模块篇)
+    - [3.1 self-attention 模块](#31-self-attention-模块)
+      - [3.1.1 传统 attention 是什么?](#311-传统-attention-是什么)
+      - [3.1.2 为什么 会有self-attention?](#312-为什么-会有self-attention)
+      - [3.1.3 self-attention 的核心思想是什么?](#313-self-attention-的核心思想是什么)
+      - [3.1.4 self-attention 的目的是什么?](#314-self-attention-的目的是什么)
+      - [3.1.5 self-attention 的怎么计算的?](#315-self-attention-的怎么计算的)
+      - [3.1.6 self-attention 为什么Q和K使用不同的权重矩阵生成，为何不能使用同一个值进行自身的点乘？](#316-self-attention-为什么q和k使用不同的权重矩阵生成为何不能使用同一个值进行自身的点乘)
+      - [3.1.7 为什么采用点积模型的 self-attention 而不采用加性模型？](#317-为什么采用点积模型的-self-attention-而不采用加性模型)
+      - [3.1.8 Transformer 中在计算 self-attention 时为什么要scaled dot product? 即 除以 $\sqrt{d}$？](#318-transformer-中在计算-self-attention-时为什么要scaled-dot-product-即-除以-sqrtd)
+      - [3.1.9 self-attention 如何解决长距离依赖问题？](#319-self-attention-如何解决长距离依赖问题)
+      - [3.1.10 self-attention 如何并行化？](#3110-self-attention-如何并行化)
+      - [3.1.11 为什么用双线性点积模型（即Q，K两个向量）](#3111-为什么用双线性点积模型即qk两个向量)
+    - [3.2 multi-head attention 模块](#32-multi-head-attention-模块)
+      - [3.2.1 multi-head attention 的思路是什么样?](#321-multi-head-attention-的思路是什么样)
+      - [3.2.2 multi-head attention 的步骤是什么样?](#322-multi-head-attention-的步骤是什么样)
+      - [3.2.3 Transformer为何使用多头注意力机制？（为什么不使用一个头）](#323-transformer为何使用多头注意力机制为什么不使用一个头)
+      - [3.2.4 多头机制为什么有效？](#324-多头机制为什么有效)
+      - [3.2.5 为什么在进行多头注意力的时候需要对每个head进行降维？](#325-为什么在进行多头注意力的时候需要对每个head进行降维)
+      - [3.2.6 multi-head attention 代码介绍](#326-multi-head-attention-代码介绍)
+    - [3.3 位置编码（Position encoding）模块](#33-位置编码position-encoding模块)
+      - [3.3.1 为什么要 加入 位置编码（Position encoding） ？](#331-为什么要-加入-位置编码position-encoding-)
+      - [3.3.2 位置编码（Position encoding）的思路是什么 ？](#332-位置编码position-encoding的思路是什么-)
+      - [3.3.3 位置编码（Position encoding）的作用是什么 ？](#333-位置编码position-encoding的作用是什么-)
+      - [3.3.4 位置编码（Position encoding）的步骤是什么 ？](#334-位置编码position-encoding的步骤是什么-)
+      - [3.3.5 Position encoding为什么选择相加而不是拼接呢？](#335-position-encoding为什么选择相加而不是拼接呢)
+      - [3.3.6 Position encoding和 Position embedding的区别？](#336-position-encoding和-position-embedding的区别)
+      - [3.3.7 为何17年提出Transformer时采用的是 Position Encoder  而不是Position Embedding？而Bert却采用的是 Position Embedding ？](#337-为何17年提出transformer时采用的是-position-encoder--而不是position-embedding而bert却采用的是-position-embedding-)
+      - [3.3.8 位置编码（Position encoding）的代码介绍](#338-位置编码position-encoding的代码介绍)
+    - [3.4 残差模块模块](#34-残差模块模块)
+      - [3.4.1 为什么要 加入 残差模块？](#341-为什么要-加入-残差模块)
+    - [3.5 Layer normalization 模块](#35-layer-normalization-模块)
+      - [3.5.1 为什么要 加入 Layer normalization 模块？](#351-为什么要-加入-layer-normalization-模块)
+      - [3.5.2 Layer normalization 模块的是什么？](#352-layer-normalization-模块的是什么)
+      - [3.5.3 Batch normalization 和 Layer normalization 的区别？](#353-batch-normalization-和-layer-normalization-的区别)
+      - [3.5.4 Transformer 中为什么要舍弃 Batch normalization 改用 Layer normalization 呢?](#354-transformer-中为什么要舍弃-batch-normalization-改用-layer-normalization-呢)
+      - [3.5.5  Layer normalization 模块代码介绍](#355--layer-normalization-模块代码介绍)
+    - [3.6 Mask 模块](#36-mask-模块)
+      - [3.6.1 什么是 Mask？](#361-什么是-mask)
+      - [3.6.2 Transformer 中用到 几种 Mask？](#362-transformer-中用到-几种-mask)
+      - [3.6.3 能不能介绍一下 Transformer 中用到几种 Mask？](#363-能不能介绍一下-transformer-中用到几种-mask)
+    - [3.7 Feed forward network (FFN)](#37-feed-forward-network-ffn)
+      - [3.7.1 Feed forward network (FFN)的作用？](#371-feed-forward-network-ffn的作用)
+    - [3.8 GELU](#38-gelu)
+      - [3.8.1 GELU原理？相比RELU的优点？](#381-gelu原理相比relu的优点)
+    - [3.9 Transformer的非线性来自于哪里？](#39-transformer的非线性来自于哪里)
+  - [参考](#参考)
+
 ## 一、动机篇
 
 ### 1.1 为什么要有 Transformer?
@@ -371,7 +427,9 @@
 ![此次是图片，手机可能打不开](img/微信截图_20200625082324.png)
 > self-attention 结构图
 
-- 步骤
+- **一句话概述：每个位置的embedding对应 Q,K,V 三个向量，这三个向量分别是embedding点乘 WQ,WK,WV 矩阵得来的。每个位置的Q向量去乘上所有位置的K向量，其结果经过softmax变成attention score，以此作为权重对所有V向量做加权求和即可。**
+
+- 具体步骤
   - embedding层：
     - 目的：将词转化成embedding向量；
   - Q，K，V 向量计算：
@@ -423,7 +481,11 @@
 
 主要原因：在理论上，加性模型和点积模型的复杂度差不多，但是点积模型在实现上可以更好地利用矩阵乘法，而矩阵乘法有很多加速策略，因此能加速训练。但是论文中实验表明，当维度$d$越来越大时，加性模型的效果会略优于点积模型，原因应该是加性模型整体上还是比点积模型更复杂（有非线性因素）。
 
-#### 3.1.8 Transformer 中在计算 self-attention 时为什么要除以 $\sqrt{d}$？
+#### 3.1.8 Transformer 中在计算 self-attention 时为什么要scaled dot product? 即 除以 $\sqrt{d}$？
+
+> 一句话回答：当输入信息的维度 d 比较高，会导致 softmax 函数接近饱和区，梯度会比较小。因此，缩放点积模型可以较好地解决这一问题。
+
+> 具体分析：
 
 - 因为对于![](img/微信截图_20201222225938.png),如果某个![](img/QQ截图20201222230028.png)相对于其他元素很大的话，那么对此向量softmax后就容易得到一个onehot向量，不够“soft”了，而且反向传播时梯度为0会导致梯度消失；
   
@@ -499,6 +561,9 @@
   - 思路：
     - 在 self-attention 能够 并行的 计算 句子中不同 的 query，因为每个 query 之间并不存在 先后依赖关系，也使得 transformer 能够并行化；
 
+#### 3.1.11 为什么用双线性点积模型（即Q，K两个向量）
+
+双线性点积模型使用Q，K两个向量，而不是只用一个Q向量，这样引入非对称性，更具健壮性（Attention对角元素值不一定是最大的，也就是说当前位置对自身的注意力得分不一定最高）。
 
 ### 3.2 multi-head attention 模块
 
@@ -547,11 +612,16 @@
 
 为了让 Transformer 能够注意到不同子空间的信息，从而捕获到跟多的特征信息。【本质：实验定律】
 
-#### 3.2.4 为什么在进行多头注意力的时候需要对每个head进行降维？
+#### 3.2.4 多头机制为什么有效？
+
+类似于CNN中通过多通道机制进行特征选择。Transformer中使用切头(split)的方法，是为了在不增加复杂度（$O(n^2 d)$）的前提下享受类似CNN中“不同卷积核”的优势。
+
+#### 3.2.5 为什么在进行多头注意力的时候需要对每个head进行降维？
 
 Transformer的多头注意力看上去是借鉴了CNN中同一卷积层内使用多个卷积核的思想，原文中使用了 8 个“scaled dot-product attention”，在同一“multi-head attention”层中，输入均为“KQV”，同时进行注意力的计算，彼此之前参数不共享，最终将结果拼接起来，这样可以允许模型在不同的表示子空间里学习到相关的信息，在此之前的 A Structured Self-attentive Sentence Embedding 也有着类似的思想。简而言之，就是希望每个注意力头，只关注最终输出序列中一个子空间，互相独立。其核心思想在于，抽取到更加丰富的特征信息。
 
-#### 3.2.5 multi-head attention 代码介绍
+#### 3.2.6 multi-head attention 代码介绍
+
 - multi-head attention 模块代码讲解【注：代码采用 tensorflow 框架编写】
 ```s
     class MultiHeadAttention(tf.keras.layers.Layer):
@@ -732,7 +802,17 @@ Transformer的多头注意力看上去是借鉴了CNN中同一卷积层内使用
 
 #### 3.5.4 Transformer 中为什么要舍弃 Batch normalization 改用 Layer normalization 呢?
 
-原始BN是为CNN而设计的，对整个batchsize范围内的数据进行考虑，而对于RNN以及transformer等等处理文本序列信息的模型来说，BN会变得非常复杂，而LN是对单个样本就可以进行处理，更加方便简单，自然选择用LN了。
+原始BN是为CNN而设计的，对整个batchsize范围内的数据进行考虑;
+
+**对于RNN来说，sequence的长度是不一致的，所以用很多padding来表示无意义的信息。如果用 BN 会导致有意义的embedding 损失信息。**
+
+所以，BN一般用于CNN，而LN用于RNN。
+
+layernorm是**在hidden size的维度进行**的，**跟batch和seq_len无关**。每个hidden state都计算自己的均值和方差，这是因为不同hidden state的量纲不一样。beta和gamma的维度都是(hidden_size,)，经过白化的hidden state * beta + gamma得到最后的结果。
+
+**LN在BERT中主要起到白化的作用，增强模型稳定性（如果删除则无法收敛）**
+
+- 参考：[Transformer代码+面试细节](https://zhuanlan.zhihu.com/p/438634058)
 
 #### 3.5.5  Layer normalization 模块代码介绍
 
@@ -829,6 +909,55 @@ Transformer的多头注意力看上去是借鉴了CNN中同一卷积层内使用
         return mask
 ```
 
+### 3.7 Feed forward network (FFN)
+
+#### 3.7.1 Feed forward network (FFN)的作用？
+
+答：Transformer在抛弃了 LSTM 结构后，FFN 中的激活函数成为了一个主要的提供**非线性变换的单元**。
+
+- 参考：[Transformer代码+面试细节](https://zhuanlan.zhihu.com/p/438634058)
+
+### 3.8 GELU
+
+#### 3.8.1 GELU原理？相比RELU的优点？
+
+答：
+
+- ReLU会确定性的将输入乘上一个0或者1(当x<0时乘上0，否则乘上1)；
+- Dropout则是随机乘上0；
+- **GELU虽然也是将输入乘上0或1，但是输入到底是乘以0还是1，是在取决于输入自身的情况下随机选择的。**
+
+具体说明：
+
+我们将神经元的输入 x 乘上一个服从伯努利分布的 m 。而该伯努利分布又是依赖于 x 的：
+
+![](img/微信截图_20211203094546.png)
+
+其中， X~N(0,1)，那么 φ(x) 就是标准正态分布的累积分布函数。这么做的原因是因为神经元的输入 x 往往遵循正态分布，尤其是深度网络中普遍存在Batch Normalization的情况下。当x减小时， φ(x) 的值也会减小，此时x被“丢弃”的可能性更高。所以说这是随机依赖于输入的方式。
+
+现在，给出GELU函数的形式：
+
+![](img/微信截图_20211203095003.png)
+
+其中  φ(x) 是上文提到的标准正态分布的累积分布函数。因为这个函数没有解析解，所以要用近似函数来表示。
+
+> 图像
+
+![](img/微信截图_20211203095438.png)
+
+> 导数
+
+![](img/微信截图_20211203095511.png)
+
+**所以，GELU的优点就是在ReLU上增加随机因素，x越小越容易被mask掉。**
+
+- 参考：[Transformer代码+面试细节](https://zhuanlan.zhihu.com/p/438634058)
+
+### 3.9 Transformer的非线性来自于哪里？
+
+FFN的gelu激活函数和self-attention，注意self-attention是非线性的（因为有相乘和softmax）。
+
+
 ## 参考
 
 1. [Transformer理论源码细节详解](https://zhuanlan.zhihu.com/p/106867810)
@@ -837,3 +966,4 @@ Transformer的多头注意力看上去是借鉴了CNN中同一卷积层内使用
 4. [Transform详解(超详细) Attention is all you need论文](https://zhuanlan.zhihu.com/p/63191028)
 5. [目前主流的attention方法都有哪些？](https://www.zhihu.com/question/68482809/answer/597944559)
 6. [transformer三部曲](https://zhuanlan.zhihu.com/p/85612521)
+7. [Transformer代码+面试细节](https://zhuanlan.zhihu.com/p/438634058)
