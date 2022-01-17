@@ -80,6 +80,13 @@
    2. 太少的往往是拼写错误、命名实体、特殊词组等
 3. 根据tfidf来筛选
 
+### 1.6 初期标注数据不足问题？
+
+作为算法工程师，在项目初期，标注数据不足问题，永远是一个老大难问题，那么如何解决该问题呢？
+
+- **Fewshot Learning** 把分类问题转化为匹配或者相似度学习的问题，减小分类空间学习的难度；
+- **迁移学习** 由于 Bert 模型在小数据集上效果相对于 其他 深度学习模型出色，除了慢一点，似乎没有其他毛病了。上两个阶段大概只需要几千条数据就可以跑起来了。
+
 ## 二、模型篇
 
 ### 2.1 模型选择
@@ -114,6 +121,127 @@
   - 深度学习方法：
     - 问题：如何确定 取 多少个词问题
     - 策略：对正负样本分别统计，综合考虑长度与样本覆盖，用 均值 + n*方差的方式确定，尽量能完全覆盖80%以上的负样本，剩下的再截断，长度对rnn一类的算法性能影响比较大，对cnn类要好很多，所以,cnn类的可以稍微长点关系也不大
+
+### 2.3 Word Embedding 处理未登录词问题
+
+这里借用了 [包包大人的回答](https://www.zhihu.com/question/308543084/answer/604729983)
+
+基本思路就是尽可能找还原语义的pre-trained embedding。
+
+步骤是:
+
+1. 原始词有没有
+2. 全小写有没有
+3. 全大写有没有
+4. 首字母大写有没有
+5. 三种次干化有没有
+6. 长得最像的几种编辑方法有没有依次瀑布式查找。
+
+当然，最好的方式，是使用subword level的pre-trained language model，生成此OOV的contextual的特征。
+
+```python
+from nltk.stem import PorterStemmer
+ps = PorterStemmer()
+from nltk.stem.lancaster import LancasterStemmer
+lc = LancasterStemmer()
+from nltk.stem import SnowballStemmer
+sb = SnowballStemmer("english")3
+spell_model = gensim.models.KeyedVectors.load_word2vec_format('../input/embeddings/wiki-news-300d-1M/wiki-news-300d-1M.vec')
+words = spell_model.index2word
+w_rank = {}
+for i,word in enumerate(words):
+    w_rank[word] = i
+WORDS = w_rank
+# Use fast text as vocabulary
+def words(text): return re.findall(r'\w+', text.lower())
+def P(word): 
+    "Probability of `word`."
+    # use inverse of rank as proxy
+    # returns 0 if the word isn't in the dictionary
+    return - WORDS.get(word, 0)
+def correction(word): 
+    "Most probable spelling correction for word."
+    return max(candidates(word), key=P)
+def candidates(word): 
+    "Generate possible spelling corrections for word."
+    return (known([word]) or known(edits1(word)) or [word])
+def known(words): 
+    "The subset of `words` that appear in the dictionary of WORDS."
+    return set(w for w in words if w in WORDS)
+def edits1(word):
+    "All edits that are one edit away from `word`."
+    letters    = 'abcdefghijklmnopqrstuvwxyz'
+    splits     = [(word[:i], word[i:])    for i in range(len(word) + 1)]
+    deletes    = [L + R[1:]               for L, R in splits if R]
+    transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R)>1]
+    replaces   = [L + c + R[1:]           for L, R in splits if R for c in letters]
+    inserts    = [L + c + R               for L, R in splits for c in letters]
+    return set(deletes + transposes + replaces + inserts)
+def edits2(word): 
+    "All edits that are two edits away from `word`."
+    return (e2 for e1 in edits1(word) for e2 in edits1(e1))
+def singlify(word):
+    return "".join([letter for i,letter in enumerate(word) if i == 0 or letter != word[i-1]])
+
+def load_glove(word_dict, lemma_dict):
+    EMBEDDING_FILE = '../input/embeddings/glove.840B.300d/glove.840B.300d.txt'
+    def get_coefs(word,*arr): return word, np.asarray(arr, dtype='float32')
+    embeddings_index = dict(get_coefs(*o.split(" ")) for o in open(EMBEDDING_FILE))
+    embed_size = 300
+    nb_words = len(word_dict)+1
+    embedding_matrix = np.zeros((nb_words, embed_size), dtype=np.float32)
+    unknown_vector = np.zeros((embed_size,), dtype=np.float32) - 1.
+    print(unknown_vector[:5])
+    for key in tqdm(word_dict):
+        word = key
+        embedding_vector = embeddings_index.get(word)
+        if embedding_vector is not None:
+            embedding_matrix[word_dict[key]] = embedding_vector
+            continue
+        word = key.lower()
+        embedding_vector = embeddings_index.get(word)
+        if embedding_vector is not None:
+            embedding_matrix[word_dict[key]] = embedding_vector
+            continue
+        word = key.upper()
+        embedding_vector = embeddings_index.get(word)
+        if embedding_vector is not None:
+            embedding_matrix[word_dict[key]] = embedding_vector
+            continue
+        word = key.capitalize()
+        embedding_vector = embeddings_index.get(word)
+        if embedding_vector is not None:
+            embedding_matrix[word_dict[key]] = embedding_vector
+            continue
+        word = ps.stem(key)
+        embedding_vector = embeddings_index.get(word)
+        if embedding_vector is not None:
+            embedding_matrix[word_dict[key]] = embedding_vector
+            continue
+        word = lc.stem(key)
+        embedding_vector = embeddings_index.get(word)
+        if embedding_vector is not None:
+            embedding_matrix[word_dict[key]] = embedding_vector
+            continue
+        word = sb.stem(key)
+        embedding_vector = embeddings_index.get(word)
+        if embedding_vector is not None:
+            embedding_matrix[word_dict[key]] = embedding_vector
+            continue
+        word = lemma_dict[key]
+        embedding_vector = embeddings_index.get(word)
+        if embedding_vector is not None:
+            embedding_matrix[word_dict[key]] = embedding_vector
+            continue
+        if len(key) > 1:
+            word = correction(key)
+            embedding_vector = embeddings_index.get(word)
+            if embedding_vector is not None:
+                embedding_matrix[word_dict[key]] = embedding_vector
+                continue
+        embedding_matrix[word_dict[key]] = unknown_vector                    
+    return embedding_matrix, nb_words
+```
 
 ### 2.3 字 or 词向量 预训练
 
@@ -195,10 +323,9 @@
 
 ### 6.1 算法策略构建
 
-1. 算法策略：
-   1. 规则挖掘【规则兜底】：对于一些 高频case 和 hard case 优先考虑规则或词典解决，避免由于模型的更新迭代，而导致模型对于 这些 case 处理不够健壮；
-      1. 常用的规则方法：重要case缓存、模式挖掘、关键词+规则设置等
-   2. 模型泛化：模型化方法适合处理无法命中规则的case，具备泛化性。还有另一种处理逻辑是：如果case命中了规则，但模型对于规则预测的结果给出了很低的置信度（也就是模型认为另一种类别的置信度更高），这时我们可以选择相信模型，以模型输出为准。
+1. 规则挖掘【规则兜底】：对于一些 高频case 和 hard case 优先考虑规则或词典解决，避免由于模型的更新迭代，而导致模型对于 这些 case 处理不够健壮；
+   1. 常用的规则方法：重要case缓存、模式挖掘、关键词+规则设置等
+2. 模型泛化：模型化方法适合处理无法命中规则的case，具备泛化性。还有另一种处理逻辑是：如果case命中了规则，但模型对于规则预测的结果给出了很低的置信度（也就是模型认为另一种类别的置信度更高），这时我们可以选择相信模型，以模型输出为准。
 
 ### 6.2 特征挖掘策略
 
@@ -350,6 +477,40 @@
 
 如果仍然想蒸馏为一个浅层BERT，我们需要首先思考自己所在的领域是否与BERT原始预训练领域的gap是否较大？如果gap较大，我们不要停止预训练，继续进行领域预训练、然后再蒸馏；或者重新预训练一个浅层BERT。此外，采取BERT上线时，也可以进行算子融合（Faster Transformer）或者混合精度等方式。
 
+## 七、竞赛 trick
+
+### 7.1 刷分的奇技淫巧？
+
+一、稳定有收益的，祖传老方子（简直太少了）
+
+1. RNN based model 包括lstm gru等，使用双向结构
+2. embedding 后使用dropout
+3. 显然问题fasttext，简单问题CNN，复杂问题RNN，终极问题bert
+4. ensemble
+5. 尽可能找到还原语义的pretrained embedding，实际情况是oov千奇百怪，拼写检查，基本上是100倍的努力，一点点收益，或者拆词，拆字能一定程度上缓解
+
+二、有可能有负作用，跟具体的配方有关，考验炼丹水平，看运气
+
+1. embedding 是否参与训练（Yoon Kim论文的结论是训练好，然而实际中基本对半）BN和dropout，以及他们的相对位置和顺序（有收益的对半分）
+2. meta-feature的使用，比如词性，情感，还有各种语言学特征和元信息等等（有收益的比较少）
+3. 要用CNN的话，用空洞版本，窗口搞大，基本稳定超过3.4.5的conv1D数据增强，drop，shuffle，replace，近义词，扩充，截取（CCF 360人机大战，kaggle Quora）
+4. 循环学习率（这个base max step 调的好，能巨大加速收敛速度）（kaggle QIQC）char/subword level的使用(kaggle toxic)词元化，词干化（有收益的比较少）
+5. 怼好分词（蚂蚁金服）
+6. 不均衡下的采样，梯度放缩，focal loss（kaggle QIQC）
+7. 伪标签，半监督（kaggle toxic）
+8. 去停用词（基本都是负作用），标点保留还是去掉（kaggle QIQC）
+9. 过拟合后冻层finetune（魔镜杯，CCF360）
+10. 长短文本各适合什么模型呢，仅在一个数据集上发现，ngram+svm可以吊打深度模型，文本挺长的，结论应该不可以泛化（达观杯）
+11. 多embedding concat，mean，收益不稳定，有时候能发现加速收敛（kaggle QIQC）加宽加深（知乎看山杯）boosting（知乎看山杯）
+12. vocab的数量，是否统一替换或者过滤低频词(kaggle avito)
+13. 网络增加冗余的激活然后concat(kaggle mecri)
+14. Maxlen覆盖百分之99就可以了，不需要最大
+15. 还有一招，换种子
+
+总结一下，数据量足够的情况下，强行破坏分布的行为，都有可能是无用功，比如清洗。但是小数据，或者分布有偏，就考验你能不能往正确的方向上改了。文本分类的论文，除了textCNN,fasttext,bert(顺路碾压下)。恕我直言，其他的哈哈哈哈，故事讲的一个比一个好看。就普适性(10个以上数据集的表现)来看，几乎所有的吊炸天structure可以被精调的两层lstm干掉。
+
+- 参考：[在文本分类任务中，有哪些论文中很少提及却对性能有重要影响的tricks？ 包包大人回答](https://www.zhihu.com/question/265357659/answer/582711744)
+
 ## 参考资料
 
 1. [【小夕精选】如何优雅而时髦的解决不均衡分类问题](https://mp.weixin.qq.com/s?__biz=MzIwNzc2NTk0NQ==&mid=2247484993&idx=1&sn=0bd32089a638e5a1b48239656febb6e0&chksm=970c2e97a07ba7818d63dddbb469486dccb369ecc11f38ffdea596452b9e5bf65772820a8ac9&token=407616831&lang=zh_CN#rd)
@@ -357,3 +518,4 @@
 3. [xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems](https://arxiv.org/pdf/1803.05170.pdf)
 4. [Description Based Text Classification with Reinforcement Learning](https://arxiv.org/pdf/2002.03067.pdf)
 5. [如何解决NLP分类任务的11个关键问题：类别不平衡&低耗时计算&小样本&鲁棒性&测试检验&长文本分类](https://zhuanlan.zhihu.com/p/183852900)
+6. [工业界文本分类避坑指南](https://mp.weixin.qq.com/s?__biz=MzIwNDY1NTU5Mg==&mid=2247483929&idx=1&sn=fc0f49f1a2de9a9000b4a91dd2434564&chksm=973d9c9ea04a158895bf84a265795a40631c9fc42afbbeb38cbd58a06b7e4a556210a059222b&mpshare=1&scene=22&srcid=0110MkpTrylqwuaXjk4Wsgtw&sharer_sharetime=1641823257142&sharer_shareid=da84f0d2d31380d783922b9e26cacfe2#rd)
