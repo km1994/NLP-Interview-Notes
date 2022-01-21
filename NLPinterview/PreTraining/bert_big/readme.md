@@ -1,14 +1,30 @@
-# 【关于 Bert->XLNet->RoBERTa->ELECTRA->ERNIE 1.0->ERNIE 2.0->ERNIE-T 那些的你不知道的事
+# 【关于 Bert 越大越精序列 】那些的你不知道的事
 
-> 作者：杨夕 </br>
-> 个人github：https://github.com/km1994/nlp_paper_study </br>
-> 原文地址：https://github.com/km1994/nlp_paper_study/bert_study/</br>
-> NLP百面百搭：https://github.com/km1994/NLP-Interview-Notes</br>
-> 【注：手机阅读可能图片打不开！！！】
+> 作者：杨夕
+> 
+> 介绍：本项目是作者们根据个人面试和经验总结出的搜索引擎(search engine) 面试准备的学习笔记与资料，该资料目前包含 搜索引擎各领域的 面试题积累。
+> 
+> NLP 百面百搭 地址：https://github.com/km1994/NLP-Interview-Notes
+> 
+> 推荐系统 百面百搭 地址：https://github.com/km1994/RES-Interview-Notes
+> 
+> **[手机版推荐系统百面百搭](https://mp.weixin.qq.com/s/b_KBT6rUw09cLGRHV_EUtw)**
+> 
+> 搜索引擎 百面百搭 地址：https://github.com/km1994/search-engine-Interview-Notes 【编写ing】
+> 
+> NLP论文学习笔记：https://github.com/km1994/nlp_paper_study
+> 
+> 推荐系统论文学习笔记：https://github.com/km1994/RS_paper_study
+> 
+> GCN 论文学习笔记：https://github.com/km1994/GCN_study
+>
+> 关注公众号 **【关于NLP那些你不知道的事】** 加入 【NLP && 推荐学习群】一起学习！！！
+
+> 注：github 网页版 看起来不舒服，可以看 **[手机版推荐系统百面百搭](https://mp.weixin.qq.com/s/b_KBT6rUw09cLGRHV_EUtw)**
 
 ## 目录
 
-- [【关于 Bert->XLNet->RoBERTa->ELECTRA->ERNIE 1.0->ERNIE 2.0->ERNIE-T 那些的你不知道的事](#关于-bert-xlnet-roberta-electra-ernie-10-ernie-20-ernie-t-那些的你不知道的事)
+- [【关于 Bert 越大越精序列 】那些的你不知道的事](#关于-bert-越大越精序列-那些的你不知道的事)
   - [目录](#目录)
   - [总结](#总结)
   - [一、Bert](#一bert)
@@ -63,23 +79,41 @@
       - [6.3.2 更多的无监督预训练任务](#632-更多的无监督预训练任务)
   - [七、ERNIE-T](#七ernie-t)
     - [7.1 【ERNIE-T】动机](#71-ernie-t动机)
-    - [6.2 【ERNIE-T】架构](#62-ernie-t架构)
-    - [6.3 【ERNIE-T】预训练](#63-ernie-t预训练)
-      - [6.3.1 引入知识图谱](#631-引入知识图谱)
-      - [6.3.2 异构信息融合](#632-异构信息融合)
-      - [6.3.3 dAE](#633-dae)
+    - [7.2 【ERNIE-T】架构](#72-ernie-t架构)
+    - [7.3 【ERNIE-T】预训练](#73-ernie-t预训练)
+      - [7.3.1 引入知识图谱](#731-引入知识图谱)
+      - [7.3.2 异构信息融合](#732-异构信息融合)
+      - [7.3.3 dAE](#733-dae)
+  - [八、ChineseBERT](#八chinesebert)
+    - [8.1 【ChineseBERT】动机](#81-chinesebert动机)
+    - [8.2 【ChineseBERT】方法介绍](#82-chinesebert方法介绍)
+      - [8.2.1 模型整体架构介绍](#821-模型整体架构介绍)
+      - [8.2.2 模型改进点介绍](#822-模型改进点介绍)
+    - [8.3 【ChineseBERT】预训练](#83-chinesebert预训练)
+  - [九、SpanBERT](#九spanbert)
+    - [9.1 【SpanBERT】动机](#91-spanbert动机)
+    - [9.2 【SpanBERT】预训练](#92-spanbert预训练)
+    - [9.3 【SpanBERT】微调](#93-spanbert微调)
+    - [9.4 【SpanBERT】效果](#94-spanbert效果)
+  - [十、MacBERT](#十macbert)
+    - [9.1 【MacBERT】动机](#91-macbert动机)
+    - [9.2 【MacBERT】预训练](#92-macbert预训练)
+      - [9.2.1 MLM](#921-mlm)
+    - [9.2.2 NSP](#922-nsp)
+    - [9.3 【MacBERT】微调](#93-macbert微调)
+    - [9.4 【MacBERT】效果](#94-macbert效果)
   - [参考](#参考)
 
 ## 总结
 
 <table>
     <tr>
-        <td>名称</td>
-        <td>介绍</td>
-        <td>动机</td>
-        <td>预训练方法</td>
-        <td>微调</td>
-        <td>问题</td>
+        <td style="width: 10%;">名称</td>
+        <td style="width: 10%;">介绍</td>
+        <td style="width: 15%;">动机</td>
+        <td style="width: 25%;">预训练方法</td>
+        <td style="width: 25%;">微调</td>
+        <td style="width: 15%;">问题</td>
     </tr>
     <tr>
         <td>Bert</td>
@@ -137,7 +171,16 @@
         <td>--</td>
         <td>问题</td>
     </tr>
+    <tr>
+        <td>ChineseBERT</td>
+        <td>ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information</td>
+        <td>引入 字形 和 拼音</td>
+        <td>1. Masking 操作 <br/>2. Packed Input 与 Single Input 之间交替训练</td>
+        <td>--</td>
+        <td>--</td>
+    </tr>
 </table>
+
 
 ## 一、Bert
 
@@ -349,6 +392,7 @@ BERT的batch_size是256，一共训练了1M步，实验证明，采用更大的b
    1. 预测 输入的句子 每个位置上的词语是否被替换过；
    
 > 注：<br/>
+>
 > 1. Discriminator是训练完之后我们得到的预训练模型，Generator在训练完之后就没有用了
 
 ## 五、ERNIE 1.0
@@ -462,21 +506,21 @@ ERNIE 2.0 提出三种策略来让模型同时学习3个任务：
 ![](img/微信截图_20210910213336.png)
 > 示例1： Bob Dylan wrote Blowin' in the Wind in 1962, and wrote Chronicies: Volume One in 2004.
 
-### 6.2 【ERNIE-T】架构
+### 7.2 【ERNIE-T】架构
 
 ![](img/微信截图_20210910213420.png)
 
-### 6.3 【ERNIE-T】预训练
+### 7.3 【ERNIE-T】预训练
 
-#### 6.3.1 引入知识图谱
+#### 7.3.1 引入知识图谱
 
 ERNIE-T 引入知识图谱来增强预训练模型的语义表达能力，其实预训练时就是在原来bert的基础上增加了一个实体对齐的任务。
 
-#### 6.3.2 异构信息融合 
+#### 7.3.2 异构信息融合 
 
 因为词向量和实体的知识图谱是两个异构的信息，那么如何设计一个网络来融合这两个信息则是我们需要解决的首要问题。如图2所示，ERNIE-T由两个模块组成，它们是底层文本编码器（underlying textual encoder，T-Encoder）和上层知识编码器（upper knowledge encoder，K-Encoder）。
 
-#### 6.3.3 dAE 
+#### 7.3.3 dAE 
 
 提出了随机mask tokens-entity中的entity，然后去预测该位置对应的entity，本质上和MLM（mask language model）任务一致，都属于去噪自编码。具体mask的细节：
 
@@ -489,6 +533,111 @@ ERNIE-T 引入知识图谱来增强预训练模型的语义表达能力，其实
 ![](img/微信截图_20210910213837.png)
 
 就是引入了一些特殊的token来表明另外一些特殊token的身份。因为引入了实体对齐任务，因此该模型在一些和知识图谱相关的下游任务上要优于bert。
+
+## 八、ChineseBERT
+
+> 论文名称：ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information</br>
+> 论文：https://arxiv.org/abs/2106.16038</br>
+> 代码：https://github.com/ShannonAI/ChineseBert</br>
+
+### 8.1 【ChineseBERT】动机
+
+1. 中文与英文不同，其包含 字形 和 拼音：
+
+- 字形：在 汉字中 字形 包含一些特殊的语义信息，而这些语义信息能够增强 中文自然语言处理任务模型的表达能力。
+
+> eg：“液”、“河”和“湖”都有“氵”，表示这些字符都与“水”的语义相关；
+
+- 拼音：利用 拼音 的 方式表示 汉字发音，在建模语义和语法信息是至关重要的；
+
+> 同样的汉字在不同的读音下，有着不同的涵义。例如： “乐”字，读“yuè”时表示音乐，读“lè” 时表示快乐; <br/>
+> 形近字发音类似。例如：“博” 和 “搏” 等；
+
+### 8.2 【ChineseBERT】方法介绍
+
+#### 8.2.1 模型整体架构介绍
+
+![](img/微信截图_20210808214524.png)
+
+1. embedding 层：将 字符嵌入（char embedding）、字形嵌入（glyph embedding）和拼音嵌入（pinyin embedding） 做拼接；
+2. Fusion Layer 层：将 拼接后的 embedding 向量 做 Fusion 得到 一个 d 维的 Fusion embedding;
+3. 位置拼接：将 Fusion embedding 和 位置嵌入（position embedding）、片段嵌入（segment embedding）相加；
+4. Transformer-Encoder层
+
+#### 8.2.2 模型改进点介绍
+
+1. 在底层的融合层（Fusion Layer）融合了除字嵌入（Char Embedding）之外的字形嵌入（Glyph Embedding）和拼音嵌入（Pinyin Embedding），得到融合嵌入（Fusion Embedding），再与位置嵌入相加，就形成模型的输入；
+2. 抛弃预训练任务中的NSP任务。 由于预训练时没有使用NSP任务，因此模型结构图省略了片段嵌入（segment embedding）。实际上下游任务输入为多个段落时（例如：文本匹配、阅读理解等任务），是采用了segment embedding；
+
+### 8.3 【ChineseBERT】预训练
+
+1. Masking 操作。预训练的一大关键步骤是确定如何掩码（Masking）输入文本。ChineseBERT 综合使用两种掩码策略：全词掩码（Whole Word Masking, WWM）与字掩码（Char Masking, CM）。
+
+- 字掩码（Char Masking, CM）：最简洁最直观的掩码方法，以单个汉字为单位进行掩码。
+- 全词掩码（Whole Word Masking, WWM）：以词为单位，将词中的所有字掩码。注意基本的输入单元依然是字，只是一个词包含的所有汉字都被掩码。比如，“我喜欢紫禁城”在掩码词“紫禁城”之后就是“我喜欢[M][M][M]”，而非“我喜欢[M]”。
+
+使用两种掩码方式易于模型从不同的角度融合字、字形、拼音及上下文信息。
+
+2. Packed Input 与 Single Input 之间交替训练。 为了习得短期上下文与长期上下文，ChineseBERT 在 Packed Input 与 Single Input 之间交替训练：
+
+- Packed Input 是将模型的输入扩展到最大长度 512，作为输入的概率为 0.9；
+- Single Input 则将单个句子作为输入，Single Input 作为输入的概率是 0.1。
+
+## 九、SpanBERT
+
+> 论文名称：SpanBERT: Improving Pre-training by Representing and Predicting Spans</br>
+> 论文：https://arxiv.org/abs/1907.10529</br>
+> 代码：https://github.com/facebookresearch/SpanBERT</br>
+
+### 9.1 【SpanBERT】动机
+
+- 动机：旨在更好地表示和预测文本的 span;
+
+### 9.2 【SpanBERT】预训练
+
+- 论文方法->扩展了BERT：
+  - （1）Span Mask。屏蔽连续的随机跨度，而不是随机标记；
+  - （2）Span Boundary Objective (SBO) 训练目标。训练跨度边界表示来预测屏蔽跨度的整个内容，而不依赖其中的单个标记表示。
+  - (3) Single-Sequence Training。弃用 Next Sentence Prediction (NSP) 任务，改用 Single-Sequence Training
+    - 原因：（a）更长的语境对模型更有利，模型可以获得更长上下文（类似 XLNet 的一部分效果；（b）加入另一个文本的语境信息会给MLM 语言模型带来噪音。
+
+![](img/微信截图_20220121111042.png)
+
+### 9.3 【SpanBERT】微调
+
+
+### 9.4 【SpanBERT】效果
+
+在 TACRED 关系抽取任务中的表现也超过了基线，获得 70.8% 的 F1 score，在 GLUE 数据集上的表现也有所提升
+
+## 十、MacBERT
+
+> 论文名称：Revisiting Pre-trained Models for Chinese Natural Language Processing </br>
+> 论文：https://arxiv.org/abs/2004.13922</br>
+> 代码：https://github.com/ymcui/MacBERT</br>
+
+### 9.1 【MacBERT】动机
+
+- 主要为了解决与训练阶段和微调阶段存在的差异性
+
+### 9.2 【MacBERT】预训练
+
+#### 9.2.1 MLM
+
+1. 使用Whole Word Masking、N-gram Masking：single token、2-gram、3-gram、4-gram分别对应比例为0.4、0.3、0.2、0.1；
+2. 由于finetuning时从未见过[MASK]token，因此使用相似的word进行替换。使用工具Synonyms toolkit 获得相似的词。如果被选中的N-gram存在相似的词，则随机选择相似的词进行替换，否则随机选择任意词替换；
+3. 对于一个输入文本，15%的词进行masking。其中80%的使用相似的词进行替换，10%使用完全随机替换，10%保持不变。
+
+### 9.2.2 NSP
+
+采用ALBERT提出的SOP替换NSP
+
+### 9.3 【MacBERT】微调
+
+
+### 9.4 【MacBERT】效果
+
+
 
 ## 参考
 
