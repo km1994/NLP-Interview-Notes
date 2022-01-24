@@ -96,12 +96,12 @@
     - [9.3 【SpanBERT】微调](#93-spanbert微调)
     - [9.4 【SpanBERT】效果](#94-spanbert效果)
   - [十、MacBERT](#十macbert)
-    - [9.1 【MacBERT】动机](#91-macbert动机)
-    - [9.2 【MacBERT】预训练](#92-macbert预训练)
-      - [9.2.1 MLM](#921-mlm)
-    - [9.2.2 NSP](#922-nsp)
-    - [9.3 【MacBERT】微调](#93-macbert微调)
-    - [9.4 【MacBERT】效果](#94-macbert效果)
+    - [10.1 【MacBERT】动机](#101-macbert动机)
+    - [10.2 【MacBERT】预训练](#102-macbert预训练)
+      - [10.2.1 MLM](#1021-mlm)
+    - [10.2.2 NSP](#1022-nsp)
+    - [10.3 【MacBERT】微调](#103-macbert微调)
+    - [10.4 【MacBERT】效果](#104-macbert效果)
   - [参考](#参考)
 
 ## 总结
@@ -176,6 +176,22 @@
         <td>ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information</td>
         <td>引入 字形 和 拼音</td>
         <td>1. Masking 操作 <br/>2. Packed Input 与 Single Input 之间交替训练</td>
+        <td>--</td>
+        <td>--</td>
+    </tr>
+    <tr>
+        <td>SpanBERT</td>
+        <td>SpanBERT: Improving Pre-training by Representing and Predicting Spans</td>
+        <td>旨在更好地表示和预测文本的 span</td>
+        <td>1. Span Mask <br/>2. Span Boundary Objective (SBO) <br/>训练目标 Single-Sequence Training</td>
+        <td>--</td>
+        <td>--</td>
+    </tr>
+    <tr>
+        <td>MacBERT</td>
+        <td>Revisiting Pre-trained Models for Chinese Natural Language Processing</td>
+        <td>为了解决与训练阶段和微调阶段存在的差异性</td>
+        <td>1. 使用Whole Word Masking、N-gram Masking <br/>2. 使用相似的word进行替换[MASK] <br/>3. 采用ALBERT提出的SOP替换NSP</td>
         <td>--</td>
         <td>--</td>
     </tr>
@@ -616,26 +632,26 @@ ERNIE-T 引入知识图谱来增强预训练模型的语义表达能力，其实
 > 论文：https://arxiv.org/abs/2004.13922</br>
 > 代码：https://github.com/ymcui/MacBERT</br>
 
-### 9.1 【MacBERT】动机
+### 10.1 【MacBERT】动机
 
 - 主要为了解决与训练阶段和微调阶段存在的差异性
 
-### 9.2 【MacBERT】预训练
+### 10.2 【MacBERT】预训练
 
-#### 9.2.1 MLM
+#### 10.2.1 MLM
 
 1. 使用Whole Word Masking、N-gram Masking：single token、2-gram、3-gram、4-gram分别对应比例为0.4、0.3、0.2、0.1；
 2. 由于finetuning时从未见过[MASK]token，因此使用相似的word进行替换。使用工具Synonyms toolkit 获得相似的词。如果被选中的N-gram存在相似的词，则随机选择相似的词进行替换，否则随机选择任意词替换；
 3. 对于一个输入文本，15%的词进行masking。其中80%的使用相似的词进行替换，10%使用完全随机替换，10%保持不变。
 
-### 9.2.2 NSP
+### 10.2.2 NSP
 
 采用ALBERT提出的SOP替换NSP
 
-### 9.3 【MacBERT】微调
+### 10.3 【MacBERT】微调
 
 
-### 9.4 【MacBERT】效果
+### 10.4 【MacBERT】效果
 
 
 

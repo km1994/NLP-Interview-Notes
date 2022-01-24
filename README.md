@@ -20,6 +20,7 @@
 > 
 > GCN 论文学习笔记：https://github.com/km1994/GCN_study
 > 
+> **推广搜 军火库**：https://github.com/km1994/recommendation_advertisement_search
 
 ![](img/微信截图_20210301212242.png)
 > **关注公众号 【关于NLP那些你不知道的事】 加入 【NLP && 推荐学习群】一起学习！！！**
