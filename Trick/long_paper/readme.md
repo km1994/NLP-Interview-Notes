@@ -20,10 +20,7 @@
   - [二、为什么 Bert 不能 处理 长文本？](#二为什么-bert-不能-处理-长文本)
   - [三、解决方法](#三解决方法)
     - [3.1 处理方法](#31-处理方法)
-    - [3.2 从 消除限制角度 处理](#32-从-消除限制角度-处理)
-      - [3.2.1 从 消除限制角度 处理 思路？](#321-从-消除限制角度-处理-思路)
-      - [3.2.2 从 消除限制角度 处理 如何处理？](#322-从-消除限制角度-处理-如何处理)
-    - [3.3 从 语料角度 处理](#33-从-语料角度-处理)
+    - [3.2 从 语料角度 处理](#32-从-语料角度-处理)
       - [3.2.1 从 语料角度 处理 思路？](#321-从-语料角度-处理-思路)
       - [3.2.2 从 语料角度 处理 如何处理？](#322-从-语料角度-处理-如何处理)
         - [3.2.2.1 Clipping（截断法）](#3221-clipping截断法)
@@ -44,6 +41,9 @@
           - [3.2.2.4.2 如何筛选出有效句子？](#32242-如何筛选出有效句子)
         - [3.2.2.5 RNN（循环法）](#3225-rnn循环法)
           - [3.2.2.5.1 RNN（循环法）思路](#32251-rnn循环法思路)
+    - [3.3 从 消除限制角度 处理](#33-从-消除限制角度-处理)
+      - [3.3.1 从 消除限制角度 处理 思路？](#331-从-消除限制角度-处理-思路)
+      - [3.3.2 从 消除限制角度 处理 如何处理？](#332-从-消除限制角度-处理-如何处理)
     - [3.4 从 模型角度 处理](#34-从-模型角度-处理)
       - [3.4.1 从 模型角度 处理 介绍](#341-从-模型角度-处理-介绍)
       - [3.4.2 从 模型角度 处理 模型思路介绍](#342-从-模型角度-处理-模型思路介绍)
@@ -109,52 +109,7 @@ def forward(self, position_ids):
 2. 从 语料角度 处理；
 3. 从 模型角度 处理；
 
-### 3.2 从 消除限制角度 处理
-
-#### 3.2.1 从 消除限制角度 处理 思路？
-
-如果需要消除长度限制，办法之一便是重新初始化一个更大的位置词表，然后将前512个向量用预训练模型中的进行替换，余下的通过在下游任务中微调或语料中训练得到即可。
-
-#### 3.2.2 从 消除限制角度 处理 如何处理？
-
-在载入预训练模型的方法中进行修改即可。如下所示便是载入预训练模型的方法：
-
-```s
-    @classmethod
-    def from_pretrained(cls, config, pretrained_model_dir=None):
-        ### 载入本地的模型参数 begin ###
-        model = cls(config)  # 初始化模型，cls为未实例化的对象，即一个未实例化的BertModel对象
-        pretrained_model_path = os.path.join(pretrained_model_dir, "pytorch_model.bin")
-        if not os.path.exists(pretrained_model_path):
-            raise ValueError(f"<路径：{pretrained_model_path} 中的模型不存在，请仔细检查！>")
-        loaded_paras = torch.load(pretrained_model_path)
-        state_dict = deepcopy(model.state_dict())
-        loaded_paras_names = list(loaded_paras.keys())[:-8]
-        model_paras_names = list(state_dict.keys())[1:]
-        ### 载入本地的模型参数 end ###
-        ### 将载入的模型参数赋值赋值到现有的模型 begin ###
-        for i in range(len(loaded_paras_names)):
-            # 判断当前参数是否为positional embeding层，如果是进行替换即可
-            if "position_embeddings" in model_paras_names[i]:
-                ### 这部分代码用来消除预训练模型只能输入小于512个字符的限制 begin ###
-                if config.max_position_embeddings > 512:
-                    new_embedding = replace_512_position(state_dict[model_paras_names[i]],
-                                                         loaded_paras[loaded_paras_names[i]])
-                    state_dict[model_paras_names[i]] = new_embedding
-                ### 这部分代码用来消除预训练模型只能输入小于512个字符的限制 begin ###
-            else:
-                state_dict[model_paras_names[i]] = loaded_paras[loaded_paras_names[i]]
-            logging.debug(f"## 成功将参数:{loaded_paras_names[i]}赋值给{model_paras_names[i]},"
-                          f"参数形状为:{state_dict[model_paras_names[i]].size()}")       
-        model.load_state_dict(state_dict)
-        ### 将载入的模型参数赋值赋值到现有的模型 end ###
-        return model
-```
-
-看完之后 是不是 觉得 很简单粗暴。
-
-
-### 3.3 从 语料角度 处理
+### 3.2 从 语料角度 处理
 
 #### 3.2.1 从 语料角度 处理 思路？
 
@@ -554,6 +509,50 @@ def get_split_text(text, split_len=250, overlap_len=50):
 3. 利用 LSTM + FC 做 分类
 
 将上一步得到的embedding直接送入LSTM网络训练.
+
+### 3.3 从 消除限制角度 处理
+
+#### 3.3.1 从 消除限制角度 处理 思路？
+
+如果需要消除长度限制，办法之一便是重新初始化一个更大的位置词表，然后将前512个向量用预训练模型中的进行替换，余下的通过在下游任务中微调或语料中训练得到即可。
+
+#### 3.3.2 从 消除限制角度 处理 如何处理？
+
+在载入预训练模型的方法中进行修改即可。如下所示便是载入预训练模型的方法：
+
+```s
+    @classmethod
+    def from_pretrained(cls, config, pretrained_model_dir=None):
+        ### 载入本地的模型参数 begin ###
+        model = cls(config)  # 初始化模型，cls为未实例化的对象，即一个未实例化的BertModel对象
+        pretrained_model_path = os.path.join(pretrained_model_dir, "pytorch_model.bin")
+        if not os.path.exists(pretrained_model_path):
+            raise ValueError(f"<路径：{pretrained_model_path} 中的模型不存在，请仔细检查！>")
+        loaded_paras = torch.load(pretrained_model_path)
+        state_dict = deepcopy(model.state_dict())
+        loaded_paras_names = list(loaded_paras.keys())[:-8]
+        model_paras_names = list(state_dict.keys())[1:]
+        ### 载入本地的模型参数 end ###
+        ### 将载入的模型参数赋值赋值到现有的模型 begin ###
+        for i in range(len(loaded_paras_names)):
+            # 判断当前参数是否为positional embeding层，如果是进行替换即可
+            if "position_embeddings" in model_paras_names[i]:
+                ### 这部分代码用来消除预训练模型只能输入小于512个字符的限制 begin ###
+                if config.max_position_embeddings > 512:
+                    new_embedding = replace_512_position(state_dict[model_paras_names[i]],
+                                                         loaded_paras[loaded_paras_names[i]])
+                    state_dict[model_paras_names[i]] = new_embedding
+                ### 这部分代码用来消除预训练模型只能输入小于512个字符的限制 begin ###
+            else:
+                state_dict[model_paras_names[i]] = loaded_paras[loaded_paras_names[i]]
+            logging.debug(f"## 成功将参数:{loaded_paras_names[i]}赋值给{model_paras_names[i]},"
+                          f"参数形状为:{state_dict[model_paras_names[i]].size()}")       
+        model.load_state_dict(state_dict)
+        ### 将载入的模型参数赋值赋值到现有的模型 end ###
+        return model
+```
+
+看完之后 是不是 觉得 很简单粗暴。
 
 ### 3.4 从 模型角度 处理
 
