@@ -71,7 +71,9 @@
       - [5.4 【关于 早停法 EarlyStopping 】那些你不知道的事](#54-关于-早停法-earlystopping-那些你不知道的事)
       - [5.5 【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](#55-关于-标签平滑法-labelsmoothing-那些你不知道的事)
       - [5.6 【关于BERT如何处理篇章级长文本】那些你不知道的事](#56-关于bert如何处理篇章级长文本那些你不知道的事)
-      - [5.7 【关于 Bert 未登录词处理】 那些你不知道的事](#57-关于-bert-未登录词处理-那些你不知道的事)
+      - [5.7 【关于 Bert Trick】 那些你不知道的事](#57-关于-bert-trick-那些你不知道的事)
+        - [5.7.1 【关于 Bert 未登录词处理】 那些你不知道的事](#571-关于-bert-未登录词处理-那些你不知道的事)
+        - [5.7.2 【关于BERT在输入层引入额外特征】 那些你不知道的事](#572-关于bert在输入层引入额外特征-那些你不知道的事)
     - [六、【关于 Python 】那些你不知道的事](#六关于-python-那些你不知道的事)
     - [七、【关于 Tensorflow 】那些你不知道的事](#七关于-tensorflow-那些你不知道的事)
 
@@ -953,6 +955,7 @@
     - 6.6 小模型大智慧
       - 6.6.1 模型蒸馏
       - 6.6.2 数据蒸馏
+- [【关于 用检索的方式做文本分类 】 那些你不知道的事](NLPinterview//textclassifier/Retrieval2Classifier/)
 
 #### 4.4 [【关于 文本匹配】那些你不知道的事](NLPinterview/TextMatch/)
 
@@ -1319,7 +1322,9 @@
     - [3.4.1 从 模型角度 处理 介绍](#341-从-模型角度-处理-介绍)
     - [3.4.2 从 模型角度 处理 模型思路介绍](#342-从-模型角度-处理-模型思路介绍)
 
-#### 5.7 [【关于 Bert 未登录词处理】 那些你不知道的事](Trick/Bert_UNK_process/)
+#### 5.7 [【关于 Bert Trick】 那些你不知道的事](Trick/Bert_trick/)
+
+##### 5.7.1 [【关于 Bert 未登录词处理】 那些你不知道的事](Trick/Bert_trick/Bert_UNK_process/)
 
 - 动机
   - 中文预训练BERT 对于 英文单词覆盖不全问题。由于  中文预训练BERT 主要针对中文，所以词表中英文单词比较少，但是一般英文单词如果简单的直接使用tokenize函数，往往在一些序列预测问题上存在一些对齐问题，或者很多不存在的单词或符号没办法处理而直接使用　unk　替换了，某些英文单词或符号失去了单词的预训练效果；
@@ -1336,6 +1341,13 @@
     - 优点：不存在 方法1 的 未登录词数量限制 问题；
   - 方法三：
     - 优点：对于一些 占位符（eg：<e></e>），方法一和方法二可能都无法生效，因为 <, e, >和 <e></e>均存在于 vocab.txt，但前三者的优先级高于 <e></e>，而 add_special_tokens会起效，却会使得词汇表大小增大，从而需另外调整模型size。但是，如果同时在词汇表vocab.txt中替换[unused]，同时 add_special_tokens，则新增词会起效，同时词汇表大小不变。
+
+
+##### 5.7.2 [【关于BERT在输入层引入额外特征】 那些你不知道的事](Trick/Bert_trick/Bert_import_new_features/)
+
+1. 邱锡鹏老师的flat : 他简单来说呢，是把词典拼在原文的输入的后面，然后和前面的词典的位置共享一个position的embedding。相当于呢是词典对原文进行了一种提示，引入了外部的知识。
+2. 在底层增加一个embedding层，就像bert原生的一样，从input-id-embedding、token-type-embedding和mask-embedding变成input-id-embedding、token-type-embedding、mask-embedding和keyword-embedding。输入，lookup之后，输出进行加和即可。这样的话，只需要随机初始化keyword-embedding就行，其他参数都可以加载原始参数;
+3. 在关键词前后加上特殊的标识符，让模型强行去学习，关键词的信息。
 
 ### 六、[【关于 Python 】那些你不知道的事](python/)
 
