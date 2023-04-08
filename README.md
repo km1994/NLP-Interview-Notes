@@ -80,6 +80,7 @@
         - [5.6.4 【关于BERT如何处理篇章级长文本】那些你不知道的事](#564-关于bert如何处理篇章级长文本那些你不知道的事)
     - [六、【关于 Python 】那些你不知道的事](#六关于-python-那些你不知道的事)
     - [七、【关于 Tensorflow 】那些你不知道的事](#七关于-tensorflow-那些你不知道的事)
+  - [sponsorship 赞助](#sponsorship-赞助)
 
 ## 手机版 NLP 百面百搭
 
@@ -1441,3 +1442,21 @@
       - （5）Softmax交叉熵损失函数
       - (6) SparseCategoricalCrossentropy vs sparse_categorical_crossentropy
   - 五、总结
+
+## sponsorship 赞助
+
+Top 3 Sponsors
+
+| Time     | Sponsor     | Amount |
+| --- | --- | --- |
+| 2021/3/25 | 林*  | 150 |
+| 2022/6/24 | 杨*     | 50    |
+
+这原本是个人的一个学习项目，我们原本计划编写到1.0为止。但是由于 这个项目 帮助到了 社区里面很多 nlper 超过了我们的想象。如果您愿意赞助我们的项目，可以
+
+扫描这个[二维码](https://github.com/km1994/GCN_study/blob/master/img/zfb.jpg)
+
+并且加这个支付宝账号，留下您的姓名
+
+项目的资金流向将被公开，所有的资金将被用于该学习项目的开支。我们会总结在sponsorship的表格中。备用链接 二维码 , 支付宝账号
+
