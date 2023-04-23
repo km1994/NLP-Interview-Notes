@@ -66,7 +66,9 @@
         - [4.7.3 【关于 Neo4j】那些你不知道的事](#473-关于-neo4j那些你不知道的事)
       - [4.8 【关于 文本摘要】 那些你不知道的事](#48-关于-文本摘要-那些你不知道的事)
       - [4.9 【关于 知识表示学习】那些你不知道的事](#49-关于-知识表示学习那些你不知道的事)
-      - [4.10  【关于 数据挖掘】那些你不知道的事](#410--关于-数据挖掘那些你不知道的事)
+      - [4.10  【NLP百面百搭 之 文本纠错篇】](#410--nlp百面百搭-之-文本纠错篇)
+      - [4.11 【关于 文本摘要】 那些你不知道的事](#411-关于-文本摘要-那些你不知道的事)
+      - [4.12 【关于 文本生成】那些你不知道的事](#412-关于-文本生成那些你不知道的事)
     - [五、【关于 NLP 技巧】那些你不知道的事](#五关于-nlp-技巧那些你不知道的事)
       - [5.1 【关于 少样本问题】那些你不知道的事](#51-关于-少样本问题那些你不知道的事)
       - [5.2 【关于 脏数据】那些你不知道的事](#52-关于-脏数据那些你不知道的事)
@@ -74,12 +76,11 @@
       - [5.4 【关于 早停法 EarlyStopping 】那些你不知道的事](#54-关于-早停法-earlystopping-那些你不知道的事)
       - [5.5 【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](#55-关于-标签平滑法-labelsmoothing-那些你不知道的事)
       - [5.6 【关于 Bert Trick】 那些你不知道的事](#56-关于-bert-trick-那些你不知道的事)
-        - [5.6.1 【关于 Bert 未登录词处理】 那些你不知道的事](#561-关于-bert-未登录词处理-那些你不知道的事)
-        - [5.6.2 【关于BERT在输入层引入额外特征】 那些你不知道的事](#562-关于bert在输入层引入额外特征-那些你不知道的事)
-        - [5.6.3 【关于BERT 继续预训练】 那些你不知道的事](#563-关于bert-继续预训练-那些你不知道的事)
-        - [5.6.4 【关于BERT如何处理篇章级长文本】那些你不知道的事](#564-关于bert如何处理篇章级长文本那些你不知道的事)
-    - [六、【关于 Python 】那些你不知道的事](#六关于-python-那些你不知道的事)
-    - [七、【关于 Tensorflow 】那些你不知道的事](#七关于-tensorflow-那些你不知道的事)
+    - [六、 【关于 Prompt】那些你不知道的事](#六-关于-prompt那些你不知道的事)
+    - [七、【关于 LLMs】那些你不知道的事](#七关于-llms那些你不知道的事)
+    - [八、 【关于 AIGC】那些你不知道的事](#八-关于-aigc那些你不知道的事)
+    - [九、【关于 Python 】那些你不知道的事](#九关于-python-那些你不知道的事)
+    - [十、【关于 Tensorflow 】那些你不知道的事](#十关于-tensorflow-那些你不知道的事)
   - [sponsorship 赞助](#sponsorship-赞助)
 
 ## 手机版 NLP 百面百搭
@@ -492,7 +493,7 @@
     - 4.1 CNN-CRF vs BiLSTM-CRF vs IDCNN-CRF?
     - 4.2 为什么 DNN 后面要加 CRF?
     - 4.3 CRF in TensorFlow V.S. CRF in discrete toolkit？
-- [【关于 中文领域 NER】 那些你不知道的事](NLPinterview/ner/ChineseNer/readme.md)
+- [【关于 中文领域 NER】 那些你不知道的事](https://wx.zsxq.com/dweb2/index/columns/51112141255244)
   - 一、动机篇
     - 1.1 中文命名实体识别 与 英文命名实体识别的区别？
   - 二、词汇增强篇
@@ -513,7 +514,7 @@
     - 3.2 为什么说 「词汇/实体类型信息增强」 方法对于中文 NER 任务有效呢？
     - 3.3 词汇/实体类型信息增强 方法有哪些？
     - 3.4 什么是 LEX-BERT ？
-- [【关于 命名实体识别 trick 】那些你不知道的事](NLPinterview/ner/NERtrick/NERtrick.md)
+- [【关于 命名实体识别 trick 】那些你不知道的事](https://wx.zsxq.com/dweb2/index/columns/51112141255244)
   - trick 1：领域词典匹配
   - trick 2：规则抽取
   - trick 3：词向量选取：词向量 or 字向量？
@@ -534,9 +535,9 @@
   - trick 11： 给定两个命名实体识别任务，一个任务数据量足够，另外一个数据量很少，可以怎么做？
   - trick 12： NER 标注数据不均衡问题？
 
-##### 4.1.2 [【关于 关系抽取】那些你不知道的事](NLPinterview/RelationExtraction/)
+##### 4.1.2 [【关于 关系抽取】那些你不知道的事](https://articles.zsxq.com/id_0uqcsdxwhg8c.html)
 
-- [【关于 关系抽取】那些你不知道的事](NLPinterview/RelationExtraction/)
+- [【关于 关系抽取】那些你不知道的事](https://articles.zsxq.com/id_0uqcsdxwhg8c.html)
   - 一、动机篇
     - 1.1 什么是关系抽取？
     - 1.2 关系抽取技术有哪些类型？
@@ -811,8 +812,8 @@
     - 七、基于 Bert 的 文本相似度 模型
     - 八、Bert 相似度 模型 使用
     - 九、总结
-- [【关于 小 Bert 模型系列算法】那些你不知道的事](NLPinterview/PreTraining/bert_zip)
-  - [【关于 小 Bert 模型系列算法】那些你不知道的事](NLPinterview/PreTraining/bert_zip)
+- [【关于 Bert 模型压缩 系列算法】那些你不知道的事](https://articles.zsxq.com/id_bknkkgtxj45f.html)
+  - [【关于 Bert 模型压缩 系列算法】那些你不知道的事](https://articles.zsxq.com/id_bknkkgtxj45f.html)
     - 一、Bert 模型压缩 动机篇
     - 二、Bert 模型压缩对比表
     - 三、 Bert 模型压缩方法介绍
@@ -847,7 +848,7 @@
       - 5.1 数据集介绍
       - 5.2 实验结果分析
     - 六、总结
-- [【关于 大 Bert 模型系列算法】 那些你不知道的事](NLPinterview/PreTraining/bert_big)
+- [【关于 大 Bert 模型系列算法】 那些你不知道的事](https://articles.zsxq.com/id_bsqbmanv6upr.html)
   - 一、引言
   - 二、Bert 变大篇
     - 2.1 认识 XLNet 么？能不能讲一下？ 和 Bert 的 区别在哪里？
@@ -926,7 +927,7 @@
   - 六、模型评估和算法比较
     - 6.1 文本分类任务使用的评估算法和指标有哪些？
     - 6.2 简单介绍混淆矩阵和kappa？
-- [【关于 文本分类 trick 】那些你不知道的事](NLPinterview//textclassifier/ClassifierTrick/)
+- [【关于 文本分类 trick 】那些你不知道的事](https://articles.zsxq.com/id_jcs3manhpbd9.html)
   - 一、数据预处理问题
     - 1.1 vocab 构建问题
     - 1.2 模型输入问题
@@ -960,7 +961,7 @@
     - 6.6 小模型大智慧
       - 6.6.1 模型蒸馏
       - 6.6.2 数据蒸馏
-- [【关于 用检索的方式做文本分类 】 那些你不知道的事](NLPinterview//textclassifier/Retrieval2Classifier/)
+- [【关于 用检索的方式做文本分类 】 那些你不知道的事](https://articles.zsxq.com/id_tln637w4a3sg.html)
 
 #### 4.4 [【关于 文本匹配】那些你不知道的事](NLPinterview/TextMatch/)
 
@@ -984,7 +985,7 @@
 
 ##### 4.5.1 [【关于 FAQ 检索式问答系统】 那些你不知道的事](NLPinterview/QA/FAQ/)
 
-- [【关于 FAQ 检索式问答系统】 那些你不知道的事](NLPinterview/QA/FAQ/)
+- [【关于 FAQ 检索式问答系统】 那些你不知道的事](https://articles.zsxq.com/id_vtkf1m0gq2or.html)
   - 一、动机
     - 1.1 问答系统的动机？
     - 1.2 问答系统 是什么？
@@ -1031,9 +1032,9 @@
   - 四、 Faiss 对比篇
     - 4.1 sklearn cosine_similarity  和 Faiss  哪家强
 
-#### 4.6 [【关于 对话系统】那些你不知道的事](NLPinterview/DialogueSystem/)
+#### 4.6 [【关于 对话系统】那些你不知道的事](https://articles.zsxq.com/id_kz2t0faje3jw.html)
 
-- [【关于 对话系统】那些你不知道的事](NLPinterview/DialogueSystem/)
+- [【关于 对话系统】那些你不知道的事](https://articles.zsxq.com/id_kz2t0faje3jw.html)
   - 一、对话系统 介绍篇
     - 1.1 对话系统有哪几种？
     - 1.2 这几种对话系统的区别？
@@ -1066,7 +1067,7 @@
 
 ##### 4.7.1 [【关于 知识图谱】 那些你不知道的事](NLPinterview/KG/)
 
-- [【关于 知识图谱】 那些你不知道的事](NLPinterview/KG/)
+- [【关于 知识图谱】 那些你不知道的事](https://articles.zsxq.com/id_360j8cpd0shj.html)
   - 一、知识图谱简介
     - 1.1 引言
     - 1.2 什么是知识图谱呢？
@@ -1087,9 +1088,9 @@
   - 四、知识图谱可以做什么？
   - 参考资料
 
-##### 4.7.2 [【关于 KBQA】那些你不知道的事](NLPinterview/KG/KBQA/)
+##### 4.7.2 [【关于 KBQA】那些你不知道的事](https://articles.zsxq.com/id_u6seb5h3pnof.html)
 
-- [【关于 KBQA】那些你不知道的事](NLPinterview/KG/KBQA/)
+- [【关于 KBQA】那些你不知道的事](https://articles.zsxq.com/id_u6seb5h3pnof.html)
   - 一、基于词典和规则的方法
     - 1.1 介绍
       - 1.1.1 开源知识图谱
@@ -1135,9 +1136,9 @@
   - 四、数据导入 Neo4j 图数据库篇
   - 参考资料
 
-#### 4.8 [【关于 文本摘要】 那些你不知道的事](NLPinterview/summary/)
+#### 4.8 [【关于 文本摘要】 那些你不知道的事](https://articles.zsxq.com/id_8ndah4nf876w.html)
 
-- [【关于 文本摘要】 那些你不知道的事](NLPinterview/summary/)
+- [【关于 文本摘要】 那些你不知道的事](https://articles.zsxq.com/id_8ndah4nf876w.html)
   - 一、动机篇
     - 1.1 什么是文本摘要？
     - 1.2 文本摘要技术有哪些类型？
@@ -1183,26 +1184,17 @@
   - 参考文献
  
 
-#### 4.10  [【关于 数据挖掘】那些你不知道的事](NLPinterview/TextMining/)
+#### 4.10  [【NLP百面百搭 之 文本纠错篇】](https://articles.zsxq.com/id_2retvz8l0es7.html)
 
-- [【关于 数据挖掘】那些你不知道的事](NLPinterview/TextMining/)
-  - 一、什么是文本挖掘？
-  - 二、文本挖掘的作用是什么？
-  - 三、文本预处理
-    - 3.1 中文分词
-    - 3.2 去停用词
-    - 3.3 低频词和高频词处理
-    - 3.4 计算 N-gram 【这里采用 Bigrams】
-  - 四、文本挖掘
-    - 4.1 关键词提取
-    - 4.2 LDA 主题模型分析
-    - 4.3 情绪分析&LDA主题模型交叉分析
-    - 4.4 ATM 模型
-    - 4.5 词向量训练及关联词分析
-    - 4.6 词聚类与词分类
-    - 4.7 文本分类
-    - 4.8 文本聚类
-    - 4.9 信息检索
+- [【关于文本纠错】那些你不知道的事](https://articles.zsxq.com/id_2retvz8l0es7.html)
+
+#### 4.11 [【关于 文本摘要】 那些你不知道的事](https://articles.zsxq.com/id_8ndah4nf876w.html)
+
+- [【关于 文本摘要】 那些你不知道的事](https://articles.zsxq.com/id_8ndah4nf876w.html)
+
+#### 4.12 [【关于 文本生成】那些你不知道的事](https://articles.zsxq.com/id_m3wckj5bhgu8.html)
+
+- [【关于生成模型的解码方法】那些你不知道的事](https://articles.zsxq.com/id_m3wckj5bhgu8.html)
 
 ### 五、[【关于 NLP 技巧】那些你不知道的事](Trick)
 
@@ -1276,7 +1268,7 @@
 
 #### 5.3 [【关于 炼丹炉】那些你不知道的事](Trick/)
 
-- [【关于 batch_size设置】那些你不知道的事](Trick/batch_size/)
+- [【关于 batch_size设置】那些你不知道的事](https://articles.zsxq.com/id_64423hvlqv6w.html)
   - 一、训练模型时，batch_size的设置，学习率的设置?
 
 #### 5.4 [【关于 早停法 EarlyStopping 】那些你不知道的事](Trick/EarlyStopping/)
@@ -1295,85 +1287,100 @@
 
 #### 5.6 [【关于 Bert Trick】 那些你不知道的事](Trick/Bert_trick/)
 
-##### 5.6.1 [【关于 Bert 未登录词处理】 那些你不知道的事](Trick/Bert_trick/Bert_UNK_process/)
+- [【关于 Bert 未登录词处理】 那些你不知道的事](Trick/Bert_trick/Bert_UNK_process/)
+  - 动机
+    - 中文预训练BERT 对于 英文单词覆盖不全问题。由于  中文预训练BERT 主要针对中文，所以词表中英文单词比较少，但是一般英文单词如果简单的直接使用tokenize函数，往往在一些序列预测问题上存在一些对齐问题，或者很多不存在的单词或符号没办法处理而直接使用　unk　替换了，某些英文单词或符号失去了单词的预训练效果；
+    - 专业领域（如医疗、金融）用词或中文偏僻词问题。NLP经常会用到预训练的语言模型，小到word2vector，大到bert。现在bert之类的基本都用char级别来训练，然而由于 Bert 等预训练模型都是采用开放域的语料进行预训练，所以对词汇覆盖的更多是日常用词，专业用词则覆盖不了，这时候该怎么处理？
+  - 方法
+    - 方法一：直接在 BERT 词表 vocab.txt 中替换 [unused]
+    - 方法二：通过重构词汇矩阵来增加新词
+    - 方法三：添加特殊占位符号 add_special_tokens
+  - 方法对比
+    - 方法一：
+      - 优点：如果存在大量领域内专业词汇，而且已经整理成词表，可以利用该方法批量添加；
+      - 缺点：因为 方法1 存在 未登录词数量限制（eg：cased模型只有99个空位，uncased模型有999个空位），所以当 未登录词 太多时，将不适用；
+    - 方法二：
+      - 优点：不存在 方法1 的 未登录词数量限制 问题；
+    - 方法三：
+      - 优点：对于一些 占位符（eg：<e></e>），方法一和方法二可能都无法生效，因为 <, e, >和 <e></e>均存在于 vocab.txt，但前三者的优先级高于 <e></e>，而 add_special_tokens会起效，却会使得词汇表大小增大，从而需另外调整模型size。但是，如果同时在词汇表vocab.txt中替换[unused]，同时 add_special_tokens，则新增词会起效，同时词汇表大小不变。
 
-- 动机
-  - 中文预训练BERT 对于 英文单词覆盖不全问题。由于  中文预训练BERT 主要针对中文，所以词表中英文单词比较少，但是一般英文单词如果简单的直接使用tokenize函数，往往在一些序列预测问题上存在一些对齐问题，或者很多不存在的单词或符号没办法处理而直接使用　unk　替换了，某些英文单词或符号失去了单词的预训练效果；
-  - 专业领域（如医疗、金融）用词或中文偏僻词问题。NLP经常会用到预训练的语言模型，小到word2vector，大到bert。现在bert之类的基本都用char级别来训练，然而由于 Bert 等预训练模型都是采用开放域的语料进行预训练，所以对词汇覆盖的更多是日常用词，专业用词则覆盖不了，这时候该怎么处理？
-- 方法
-  - 方法一：直接在 BERT 词表 vocab.txt 中替换 [unused]
-  - 方法二：通过重构词汇矩阵来增加新词
-  - 方法三：添加特殊占位符号 add_special_tokens
-- 方法对比
-  - 方法一：
-    - 优点：如果存在大量领域内专业词汇，而且已经整理成词表，可以利用该方法批量添加；
-    - 缺点：因为 方法1 存在 未登录词数量限制（eg：cased模型只有99个空位，uncased模型有999个空位），所以当 未登录词 太多时，将不适用；
-  - 方法二：
-    - 优点：不存在 方法1 的 未登录词数量限制 问题；
-  - 方法三：
-    - 优点：对于一些 占位符（eg：<e></e>），方法一和方法二可能都无法生效，因为 <, e, >和 <e></e>均存在于 vocab.txt，但前三者的优先级高于 <e></e>，而 add_special_tokens会起效，却会使得词汇表大小增大，从而需另外调整模型size。但是，如果同时在词汇表vocab.txt中替换[unused]，同时 add_special_tokens，则新增词会起效，同时词汇表大小不变。
+- [【关于BERT在输入层引入额外特征】 那些你不知道的事](Trick/Bert_trick/Bert_import_new_features/)
+  - 邱锡鹏老师的flat : 他简单来说呢，是把词典拼在原文的输入的后面，然后和前面的词典的位置共享一个position的embedding。相当于呢是词典对原文进行了一种提示，引入了外部的知识。
+  - 在底层增加一个embedding层，就像bert原生的一样，从input-id-embedding、token-type-embedding和mask-embedding变成input-id-embedding、token-type-embedding、mask-embedding和keyword-embedding。输入，lookup之后，输出进行加和即可。这样的话，只需要随机初始化keyword-embedding就行，其他参数都可以加载原始参数;
+  - 在关键词前后加上特殊的标识符，让模型强行去学习，关键词的信息。
 
-##### 5.6.2 [【关于BERT在输入层引入额外特征】 那些你不知道的事](Trick/Bert_trick/Bert_import_new_features/)
+- [【关于BERT 继续预训练】 那些你不知道的事](Trick/Bert_trick/Bert_continual_pre_training/)
+  - 【关于BERT 继续预训练】 那些你不知道的事
+    - 一、动机
+    - 二、什么是 继续预训练？
+    - 三、为什么会存在 【数据分布/领域差异】大 问题？
+    - 四、如何进行 继续预训练？
+      - 4.1 数据角度
+      - 4.2 训练参数角度
+      - 4.3 模型角度
+    - 五、还有哪些待解决问题？
+      - 5.1 训练数据问题
+      - 5.2 知识缺乏问题
+        - 5.2.1 知识缺乏问题描述
+        - 5.2.2 知识缺乏问题解决方法
+      - 5.3 知识理解缺乏问题
+        - 5.3.1 知识理解缺乏问题描述
+        - 5.3.2 知识理解缺乏问题解决方法
+    - 参考
 
-1. 邱锡鹏老师的flat : 他简单来说呢，是把词典拼在原文的输入的后面，然后和前面的词典的位置共享一个position的embedding。相当于呢是词典对原文进行了一种提示，引入了外部的知识。
-2. 在底层增加一个embedding层，就像bert原生的一样，从input-id-embedding、token-type-embedding和mask-embedding变成input-id-embedding、token-type-embedding、mask-embedding和keyword-embedding。输入，lookup之后，输出进行加和即可。这样的话，只需要随机初始化keyword-embedding就行，其他参数都可以加载原始参数;
-3. 在关键词前后加上特殊的标识符，让模型强行去学习，关键词的信息。
+- [【关于BERT如何处理篇章级长文本】那些你不知道的事](https://articles.zsxq.com/id_e5aaclwgbwue.html)
+  - 一、动机
+  - 二、为什么 Bert 不能 处理 长文本？
+  - 三、解决方法
+    - 3.1 处理方法
+    - 3.2 从 消除限制角度 处理
+      - 3.2.1 从 消除限制角度 处理 思路？
+      - 3.2.2 从 消除限制角度 处理 如何处理？
+    - 3.3 从 语料角度 处理
+      - 3.2.1 从 语料角度 处理 思路？
+      - 3.2.2 从 语料角度 处理 如何处理？
+        - 3.2.2.1 Clipping（截断法）
+          - 3.2.2.1.1 Clipping（截断法）分类
+          - 3.2.2.1.2 Clipping（截断法） 如何选择
+          - 3.2.2.1.3 Clipping（截断法） 存在什么问题？
+        - 3.2.2.2 Pooling（池化法）【注：引用至 何枝】
+          - 3.2.2.2.1 Pooling（池化法）是什么？
+          - 3.2.2.2.2 Pooling（池化法）思路？
+          - 3.2.2.2.3 Pooling（池化法）实战？
+          - 3.2.2.2.4 Pooling（池化法）缺点？
+        - 3.2.2.3 划窗法
+          - 3.2.2.3.1 划窗法 思路介绍
+          - 3.2.2.3.2 划窗法 代码 实战
+          - 3.2.2.3.3 划窗法 缺点
+        - 3.2.2.4 压缩法
+          - 3.2.2.4.1 压缩法 动机
+          - 3.2.2.4.2 如何筛选出有效句子？
+        - 3.2.2.5 RNN（循环法）
+          - 3.2.2.5.1 RNN（循环法）思路
+    - 3.4 从 模型角度 处理
+      - 3.4.1 从 模型角度 处理 介绍
+      - 3.4.2 从 模型角度 处理 模型思路介绍
 
-##### 5.6.3 [【关于BERT 继续预训练】 那些你不知道的事](Trick/Bert_trick/Bert_continual_pre_training/)
+### 六、 [【关于 Prompt】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
 
-- [【关于BERT 继续预训练】 那些你不知道的事](#关于bert-继续预训练-那些你不知道的事)
-  - [一、动机](#一动机)
-  - [二、什么是 继续预训练？](#二什么是-继续预训练)
-  - [三、为什么会存在 【数据分布/领域差异】大 问题？](#三为什么会存在-数据分布领域差异大-问题)
-  - [四、如何进行 继续预训练？](#四如何进行-继续预训练)
-    - [4.1 数据角度](#41-数据角度)
-    - [4.2 训练参数角度](#42-训练参数角度)
-    - [4.3 模型角度](#43-模型角度)
-  - [五、还有哪些待解决问题？](#五还有哪些待解决问题)
-    - [5.1 训练数据问题](#51-训练数据问题)
-    - [5.2 知识缺乏问题](#52-知识缺乏问题)
-      - [5.2.1 知识缺乏问题描述](#521-知识缺乏问题描述)
-      - [5.2.2 知识缺乏问题解决方法](#522-知识缺乏问题解决方法)
-    - [5.3 知识理解缺乏问题](#53-知识理解缺乏问题)
-      - [5.3.1 知识理解缺乏问题描述](#531-知识理解缺乏问题描述)
-      - [5.3.2 知识理解缺乏问题解决方法](#532-知识理解缺乏问题解决方法)
-  - [参考](#参考)
+- [【关于 Prompt】 那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
+- [【关于Prompt之文本生成】 那些你不知道的事](https://articles.zsxq.com/id_po1gopdolinx.html)
+- [【关于 LoRA】那些你不知道的事](https://articles.zsxq.com/id_da8pumsjwbqw.html)
 
-##### 5.6.4 [【关于BERT如何处理篇章级长文本】那些你不知道的事](Trick/long_paper/)
+### 七、[【关于 LLMs】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
 
-- [一、动机](#一动机)
-- [二、为什么 Bert 不能 处理 长文本？](#二为什么-bert-不能-处理-长文本)
-- [三、解决方法](#三解决方法)
-  - [3.1 处理方法](#31-处理方法)
-  - [3.2 从 消除限制角度 处理](#32-从-消除限制角度-处理)
-    - [3.2.1 从 消除限制角度 处理 思路？](#321-从-消除限制角度-处理-思路)
-    - [3.2.2 从 消除限制角度 处理 如何处理？](#322-从-消除限制角度-处理-如何处理)
-  - [3.3 从 语料角度 处理](#33-从-语料角度-处理)
-    - [3.2.1 从 语料角度 处理 思路？](#321-从-语料角度-处理-思路)
-    - [3.2.2 从 语料角度 处理 如何处理？](#322-从-语料角度-处理-如何处理)
-      - [3.2.2.1 Clipping（截断法）](#3221-clipping截断法)
-        - [3.2.2.1.1 Clipping（截断法）分类](#32211-clipping截断法分类)
-        - [3.2.2.1.2 Clipping（截断法） 如何选择](#32212-clipping截断法-如何选择)
-        - [3.2.2.1.3 Clipping（截断法） 存在什么问题？](#32213-clipping截断法-存在什么问题)
-      - [3.2.2.2 Pooling（池化法）【注：引用至 何枝】](#3222-pooling池化法注引用至-何枝)
-        - [3.2.2.2.1 Pooling（池化法）是什么？](#32221-pooling池化法是什么)
-        - [3.2.2.2.2 Pooling（池化法）思路？](#32222-pooling池化法思路)
-        - [3.2.2.2.3 Pooling（池化法）实战？](#32223-pooling池化法实战)
-        - [3.2.2.2.4 Pooling（池化法）缺点？](#32224-pooling池化法缺点)
-      - [3.2.2.3 划窗法](#3223-划窗法)
-        - [3.2.2.3.1 划窗法 思路介绍](#32231-划窗法-思路介绍)
-        - [3.2.2.3.2 划窗法 代码 实战](#32232-划窗法-代码-实战)
-        - [3.2.2.3.3 划窗法 缺点](#32233-划窗法-缺点)
-      - [3.2.2.4 压缩法](#3224-压缩法)
-        - [3.2.2.4.1 压缩法 动机](#32241-压缩法-动机)
-        - [3.2.2.4.2 如何筛选出有效句子？](#32242-如何筛选出有效句子)
-      - [3.2.2.5 RNN（循环法）](#3225-rnn循环法)
-        - [3.2.2.5.1 RNN（循环法）思路](#32251-rnn循环法思路)
-  - [3.4 从 模型角度 处理](#34-从-模型角度-处理)
-    - [3.4.1 从 模型角度 处理 介绍](#341-从-模型角度-处理-介绍)
-    - [3.4.2 从 模型角度 处理 模型思路介绍](#342-从-模型角度-处理-模型思路介绍)
+- [【关于 GPT / GPT-2 / GPT-3 / InstructGPT 】那些你不知道的事](https://articles.zsxq.com/id_ik77qgnqtk6w.html)
+- [【每日一面】现在达模型LLM，微调方式有哪些？各有什么优缺点？](https://articles.zsxq.com/id_i6uv0mtg4mah.html)
+- [【NLP百面百搭】LLM若干问题备忘](https://articles.zsxq.com/id_gon71zogm6k9.html)
+- [【NLP百面百搭】为什么现在的LLM都是Decoder only的架构？](https://articles.zsxq.com/id_wgoabuow5m1t.html)
 
-### 六、[【关于 Python 】那些你不知道的事](python/)
+
+### 八、 [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
+
+- [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
+
+
+### 九、[【关于 Python 】那些你不知道的事](python/)
 
 - [【关于 Python 】那些你不知道的事](python/)
   - 一、什么是*args 和 **kwargs？
@@ -1422,7 +1429,7 @@
     - 7.3 GIL有什么影响？
     - 7.4 如何避免GIL带来的影响？
   
-### 七、[【关于 Tensorflow 】那些你不知道的事](Tensorflow/)
+### 十、[【关于 Tensorflow 】那些你不知道的事](Tensorflow/)
 
 - [【关于 Tensorflow 损失函数】 那些你不知道的事](Tensorflow/loss_study/)
   - 一、动机
