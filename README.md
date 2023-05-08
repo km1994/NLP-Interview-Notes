@@ -45,9 +45,16 @@
   - [目录架构](#目录架构)
   - [手机版 NLP 百面百搭](#手机版-nlp-百面百搭)
   - [内容框架](#内容框架)
-    - [一、【关于 基础算法篇】那些你不知道的事](#一关于-基础算法篇那些你不知道的事)
-    - [二、【关于 机器学习算法篇】那些你不知道的事](#二关于-机器学习算法篇那些你不知道的事)
-    - [三、【关于 深度学习算法篇】那些你不知道的事](#三关于-深度学习算法篇那些你不知道的事)
+    - [六、 【关于 Tuning 】那些你不知道的事](#六-关于-tuning-那些你不知道的事)
+    - [七、【关于 LLMs】那些你不知道的事](#七关于-llms那些你不知道的事)
+    - [八、 【关于 AIGC】那些你不知道的事](#八-关于-aigc那些你不知道的事)
+    - [五、【关于 NLP 技巧】那些你不知道的事](#五关于-nlp-技巧那些你不知道的事)
+      - [5.1 【关于 少样本问题】那些你不知道的事](#51-关于-少样本问题那些你不知道的事)
+      - [5.2 【关于 脏数据】那些你不知道的事](#52-关于-脏数据那些你不知道的事)
+      - [5.3 【关于 炼丹炉】那些你不知道的事](#53-关于-炼丹炉那些你不知道的事)
+      - [5.4 【关于 早停法 EarlyStopping 】那些你不知道的事](#54-关于-早停法-earlystopping-那些你不知道的事)
+      - [5.5 【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](#55-关于-标签平滑法-labelsmoothing-那些你不知道的事)
+      - [5.6 【关于 Bert Trick】 那些你不知道的事](#56-关于-bert-trick-那些你不知道的事)
     - [四、【关于 NLP 学习算法】那些你不知道的事](#四关于-nlp-学习算法那些你不知道的事)
       - [4.1 【关于 信息抽取】那些你不知道的事](#41-关于-信息抽取那些你不知道的事)
         - [4.1.1 【关于 命名实体识别】那些你不知道的事](#411-关于-命名实体识别那些你不知道的事)
@@ -69,16 +76,9 @@
       - [4.10  【NLP百面百搭 之 文本纠错篇】](#410--nlp百面百搭-之-文本纠错篇)
       - [4.11 【关于 文本摘要】 那些你不知道的事](#411-关于-文本摘要-那些你不知道的事)
       - [4.12 【关于 文本生成】那些你不知道的事](#412-关于-文本生成那些你不知道的事)
-    - [五、【关于 NLP 技巧】那些你不知道的事](#五关于-nlp-技巧那些你不知道的事)
-      - [5.1 【关于 少样本问题】那些你不知道的事](#51-关于-少样本问题那些你不知道的事)
-      - [5.2 【关于 脏数据】那些你不知道的事](#52-关于-脏数据那些你不知道的事)
-      - [5.3 【关于 炼丹炉】那些你不知道的事](#53-关于-炼丹炉那些你不知道的事)
-      - [5.4 【关于 早停法 EarlyStopping 】那些你不知道的事](#54-关于-早停法-earlystopping-那些你不知道的事)
-      - [5.5 【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](#55-关于-标签平滑法-labelsmoothing-那些你不知道的事)
-      - [5.6 【关于 Bert Trick】 那些你不知道的事](#56-关于-bert-trick-那些你不知道的事)
-    - [六、 【关于 Prompt】那些你不知道的事](#六-关于-prompt那些你不知道的事)
-    - [七、【关于 LLMs】那些你不知道的事](#七关于-llms那些你不知道的事)
-    - [八、 【关于 AIGC】那些你不知道的事](#八-关于-aigc那些你不知道的事)
+    - [一、【关于 基础算法篇】那些你不知道的事](#一关于-基础算法篇那些你不知道的事)
+    - [二、【关于 机器学习算法篇】那些你不知道的事](#二关于-机器学习算法篇那些你不知道的事)
+    - [三、【关于 深度学习算法篇】那些你不知道的事](#三关于-深度学习算法篇那些你不知道的事)
     - [九、【关于 Python 】那些你不知道的事](#九关于-python-那些你不知道的事)
     - [十、【关于 Tensorflow 】那些你不知道的事](#十关于-tensorflow-那些你不知道的事)
   - [sponsorship 赞助](#sponsorship-赞助)
@@ -89,333 +89,280 @@
 
 ## 内容框架
 
-### 一、[【关于 基础算法篇】那些你不知道的事](BasicAlgorithm/)
+### 六、 [【关于 Tuning 】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
 
-- [【关于 过拟合和欠拟合】那些你不知道的事](BasicAlgorithm/过拟合和欠拟合.md)
-  - 一、过拟合和欠拟合 是什么？
-  - 二、过拟合/高方差（overfiting / high variance）篇
-    - 2.1 过拟合是什么及检验方法？
-    - 2.2 导致过拟合的原因是什么？
-    - 2.3 过拟合的解决方法是什么？
-  - 三、欠拟合/高偏差（underfiting / high bias）篇
-    - 3.1 欠拟合是什么及检验方法？
-    - 3.2 导致欠拟合的原因是什么？
-    - 3.3 过拟合的解决方法是什么？
+- [【关于 Prompt】 那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
+- [【关于Prompt之文本生成】 那些你不知道的事](https://articles.zsxq.com/id_po1gopdolinx.html)
+- [【关于 LoRA】那些你不知道的事](https://articles.zsxq.com/id_da8pumsjwbqw.html)
+- [PEFT: State-of-the-art Parameter-Efficient Fine-Tuning 百面百搭](https://articles.zsxq.com/id_2r4w85eov81e.html)
+  - 一、微调 Fine-tuning 篇
+    - 1.1 什么是 微调 Fine-tuning ？
+    - 1.2 微调 Fine-tuning 基本思想是什么？
+  - 二、轻度微调（lightweight Fine-tuning）篇
+    - 2.1 什么是 轻度微调（lightweight Fine-tuning）？
+  - 三、适配器微调（Adapter-tuning）篇
+    - 3.1 什么 是 适配器微调（Adapter-tuning）？
+    - 3.2 适配器微调（Adapter-tuning）变体有哪些？
+      - 3.2.1 AdapterH
+      - 3.2.2 AdapterL
+      - 3.2.3 AdapterP
+      - 3.2.4 AdapterD
+  - 四、提示学习（Prompting）篇
+    - 4.1 什么是 提示学习（Prompting）？
+    - 4.2 提示学习（Prompting）的目的是什么？
+    - 4.3 提示学习（Prompting） 代表方法有哪些？
+      - 4.3.1 前缀微调（Prefix-tining）篇
+        - 4.3.1.1 什么是 前缀微调（Prefix-tining）？
+        - 4.3.1.2 前缀微调（Prefix-tining）的核心是什么？
+        - 4.3.1.3 前缀微调（Prefix-tining）的技术细节有哪些？
+        - 4.3.1.4 前缀微调（Prefix-tining）的优点是什么？
+        - 4.3.1.5 前缀微调（Prefix-tining）的缺点是什么？
+      - 4.3.2 指示微调（Prompt-tuning）篇
+        - 4.3.2.1 什么是 指示微调（Prompt-tuning）？
+        - 4.3.2.2 指示微调（Prompt-tuning）的核心思想？
+        - 4.3.2.3 指示微调（Prompt-tuning）的 优点/贡献 是什么？
+        - 4.3.2.4 指示微调（Prompt-tuning）的 缺点 是什么？
+        - 4.3.2.5 指示微调（Prompt-tuning）与 Prefix-tuning 区别 是什么？
+        - 4.3.2.6 指示微调（Prompt-tuning）与 fine-tuning 区别 是什么？
+      - 4.3.3 P-tuning 篇
+        - 4.3.3.1 P-tuning 动机是什么？
+        - 4.3.3.2 P-tuning 核心思想是什么？
+        - 4.3.3.3 P-tuning 做了哪些改进？
+        - 4.3.3.4 P-tuning 有哪些优点/贡献？
+        - 4.3.3.5 P-tuning 有哪些缺点？
+      - 4.3.4 P-tuning v2 篇
+        - 4.3.4.1 为什么需要 P-tuning v2？
+        - 4.3.4.2 P-tuning v2 是什么？
+        - 4.3.4.3 P-tuning v2 有哪些优点？
+        - 4.3.4.4 P-tuning v2 有哪些缺点？
+      - 4.3.5 PPT 篇
+        - 4.3.5.1 为什么需要 PPT ？
+        - 4.3.5.2 PPT 核心思想 是什么？
+        - 4.3.5.3 PPT 具体做法是怎么样？
+        - 4.3.5.4 常用的soft prompt初始化方法？
+        - 4.3.5.5 PPT 的优点是什么？
+        - 4.3.5.6 PPT 的缺点是什么？
+    - 4.4 提示学习（Prompting） 优点 是什么？
+    - 4.5 提示学习（Prompting） 本质 是什么？
+  - 五、指令微调（Instruct-tuning）篇
+    - 5.1 为什么需要 指令微调（Instruct-tuning）？
+    - 5.2 指令微调（Instruct-tuning）是什么？
+    - 5.3 指令微调（Instruct-tuning）的优点是什么？
+    - 5.4 指令微调（Instruct-tuning） vs 提升学习（Prompting）？
+    - 5.5 指令微调（Instruct-tuning） vs 提升学习（Prompting） vs Fine-tuning？
+  - 六、指令提示微调（Instruct Prompt tuning）篇
+    - 6.1 为什么需要 指令微调（Instruct-tuning）？
+    - 6.2 指令微调（Instruct-tuning） 是什么？
+    - 6.3 指令微调（Instruct-tuning） 在不同任务上性能？
+  - 七、self-instruct篇
+    - 7.1 什么是 self-instruct？
+  - 八、Chain-of-Thought 篇
+    - 8.1 为什么需要 Chain-of-Thought ？
+    - 8.2 什么是 Chain-of-Thought ？
+    - 8.3 Chain-of-Thought 的思路是怎么样的？
+    - 8.4 Chain-of-Thought 的优点是什么？
+    - 8.5 为什么 chain-of-thought 会成功？
+  - 九、LoRA 篇
+    - 9.1 LoRA 篇
+      - 9.1.1 LoRA 核心思想是什么？
+      - 9.1.2 LoRA 具体思路是什么？
+      - 9.1.3 LoRA 优点是什么？
+      - 9.1.4 LoRA 缺点是什么？
+    - 9.2 AdaLoRA 篇
+      - 9.2.1 AdaLoRA 核心思想是什么？
+      - 9.2.2 AdaLoRA 实现思路是什么？
+    - 9.3  DyLoRA 篇
+      - 9.3.1 AdaLoRA 动机是什么？
+      - 9.3.2 AdaLoRA 核心思想是什么？
+      - 9.3.3 AdaLoRA 优点是什么？
+  - 十、BitFit 篇
+    - 10.1 AdaLoRA 核心思想是什么？
+    - 10.2 AdaLoRA 优点是什么？
+    - 10.3 AdaLoRA 缺点是什么？
+  - 参考
 
-- [【关于 BatchNorm vs LayerNorm】那些你不知道的事](BasicAlgorithm/BatchNormVsLayerNorm.md)
-  - 一、动机篇
-    - 1.1 独立同分布（independent and identically distributed）与白化
-    - 1.2 （ Internal Covariate Shift，ICS）
-    - 1.3 ICS问题带来的后果是什么？
-  - 二、Normalization 篇
-    - 2.1 Normalization 的通用框架与基本思想
-  - 三、Batch Normalization 篇
-    - 3.1 Batch Normalization（纵向规范化）是什么？
-    - 3.2 Batch Normalization（纵向规范化）存在什么问题？
-    - 3.3 Batch Normalization（纵向规范化）适用的场景是什么？
-    - 3.4 BatchNorm 存在什么问题？
-  - 四、Layer Normalization（横向规范化） 篇
-    - 4.1 Layer Normalization（横向规范化）是什么？
-    - 4.2 Layer Normalization（横向规范化）有什么用？
-  - 五、BN vs LN 篇
-  - 六、主流 Normalization 方法为什么有效？
-- [【关于 激活函数】那些你不知道的事](BasicAlgorithm/激活函数.md)
-  - 一、动机篇
-    - 1.1 为什么要有激活函数？
-  - 二、激活函数介绍篇
-    - 2.1 sigmoid 函数篇
-      - 2.1.1 什么是 sigmoid 函数？
-      - 2.1.2 为什么选 sigmoid 函数 作为激活函数？
-      - 2.1.3 sigmoid 函数 有什么缺点？
-    - 2.2 tanh 函数篇
-      - 2.2.1 什么是 tanh 函数？
-      - 2.2.2 为什么选 tanh 函数 作为激活函数？
-      - 2.2.3 tanh 函数 有什么缺点？
-    - 2.3 relu 函数篇
-      - 2.3.1 什么是 relu 函数？
-      - 2.3.2 为什么选 relu 函数 作为激活函数？
-      - 2.3.3 relu 函数 有什么缺点？
-  - 三、激活函数选择篇
-- [【关于 正则化】那些你不知道的事](BasicAlgorithm/正则化.md)
-  - 一、L0，L1，L2正则化 篇
-    - 1.1 正则化 是什么？
-    - 1.2 什么是 L0 正则化 ？
-    - 1.3 什么是 L1 （稀疏规则算子 Lasso regularization）正则化 ？
-    - 1.4 什么是 L2 正则化（岭回归 Ridge Regression 或者 权重衰减 Weight Decay）正则化 ？
-  - 二、对比篇
-    - 2.1 什么是结构风险最小化？
-    - 2.2 从结构风险最小化的角度理解L1和L2正则化
-    - 2.3 L1 vs L2
-  - 三、dropout 篇
-    - 3.1 什么是 dropout？
-    - 3.2 dropout 在训练和测试过程中如何操作？
-    - 3.3 dropout 如何防止过拟合?
-- [【关于 优化算法及函数】那些你不知道的事](BasicAlgorithm/优化算法及函数.md)
-  - 一、动机篇
-    - 1.1 为什么需要 优化函数？
-    - 1.2 优化函数的基本框架是什么?
-  - 二、优化函数介绍篇
-    - 2.1 梯度下降法是什么?
-    - 2.2 随机梯度下降法是什么?
-    - 2.3 Momentum 是什么?
-    - 2.4 SGD with Nesterov Acceleration 是什么?
-    - 2.5 Adagrad 是什么?
-    - 2.6 RMSProp/AdaDelta 是什么？
-    - 2.7 Adam 是什么?
-    - 2.8 Nadam 是什么?
-  - 三、优化函数学霸笔记篇
-- [【关于 归一化】那些你不知道的事](BasicAlgorithm/归一化.md)
-  - 一、动机篇
-    - 1.1 为什么要归一化？
-  - 二、介绍篇
-    - 2.1  归一化 有 哪些方法？
-    - 2.2  归一化 各方法 特点？
-    - 2.3  归一化 的 意义？
-  - 三、应用篇
-    - 3.1 哪些机器学习算法 需要做 归一化？
-    - 3.2 哪些机器学习算法 不需要做 归一化？
-- [【关于 判别式（discriminative）模型 vs. 生成式(generative)模型】 那些你不知道的事](BasicAlgorithm/判别式vs生成式.md)
-  - 一、判别式模型篇
-    - 1.1 什么是判别式模型？
-    - 1.2 判别式模型是思路是什么？
-    - 1.3 判别式模型的优点是什么？
-  - 二、生成式模型篇
-    - 2.1 什么是生成式模型？
-    - 2.2 生成式模型是思路是什么？
-    - 2.3 生成式模型的优点是什么？
-    - 2.4 生成式模型的缺点是什么？
+### 七、[【关于 LLMs】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
 
-### 二、[【关于 机器学习算法篇】那些你不知道的事](MachineLearningAlgorithm)
+- [【关于 GPT / GPT-2 / GPT-3 / InstructGPT 】那些你不知道的事](https://articles.zsxq.com/id_ik77qgnqtk6w.html)
+- [【每日一面】现在达模型LLM，微调方式有哪些？各有什么优缺点？](https://articles.zsxq.com/id_i6uv0mtg4mah.html)
+- [【NLP百面百搭】LLM若干问题备忘](https://articles.zsxq.com/id_gon71zogm6k9.html)
+- [【NLP百面百搭】为什么现在的LLM都是Decoder only的架构？](https://articles.zsxq.com/id_wgoabuow5m1t.html)
+- [【关于 GLM：ChatGLM的基座模型】那些你不知道的事](https://articles.zsxq.com/id_bwx8btw6h2p1.html)
+  - 一、GLM 的 核心是什么？
+  - 二、GLM 的 模型架构是什么？
+  - 三、GLM 如何进行 多任务训练？
+  - 四、在进行 NLG 时， GLM 如何保证 生成长度的未知性？
+  - 五、GLM 的 多任务微调方式有什么差异？
+  - 六、GLM 的 多任务微调方式有什么优点？
 
-- [【关于 逻辑回归】那些你不知道的事](MachineLearningAlgorithm/逻辑回归.md)
+### 八、 [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
+
+- [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
+
+### 五、[【关于 NLP 技巧】那些你不知道的事](Trick)
+
+#### 5.1 [【关于 少样本问题】那些你不知道的事](Trick/SmallSampleProblem/)
+
+- [【关于 EDA 】那些你不知道的事](Trick/SmallSampleProblem/EDA/eda.md)
+  - 一、动机篇
+    - 1.1 什么是 数据增强？
+    - 1.2 为什么需要 数据增强？
+  - 二、常见的数据增强方法篇
+    - 2.1 词汇替换篇
+      - 2.1.1 什么是基于词典的替换方法？
+      - 2.1.2 什么是基于词向量的替换方法？
+      - 2.1.3 什么是基于 MLM 的替换方法？
+      - 2.1.4 什么是基于 TF-IDF 的词替换？
+    - 2.2 词汇插入篇
+      - 2.2.1 什么是随机插入法？
+    - 2.3 词汇交换篇
+      - 2.3.1 什么是随机交换法？
+    - 2.4 词汇删除篇
+      - 2.4.1 什么是随机删除法？
+    - 2.5 回译篇
+      - 2.5.1 什么是回译法？
+    - 2.6 交叉增强篇
+      - 2.6.1 什么是 交叉增强篇
+    - 2.7 语法树篇
+      - 2.7.1 什么是语法树操作？
+    - 2.8 对抗增强篇
+      - 2.8.1 什么是对抗增强？
+- [【关于 主动学习 】那些你不知道的事](Trick/SmallSampleProblem/activeLearn/readme.md)
+  - 一、动机篇
+    - 1.1 主动学习是什么？
+    - 1.2 为什么需要主动学习？
+  - 二、主动学习篇
+    - 2.1 主动学习的思路是什么？
+    - 2.2 主动学习方法 的价值点在哪里？
+  - 三、样本选取策略篇
+    - 3.1 以未标记样本的获取方式的差别进行划分
+    - 3.2 测试集内选取“信息”量最大的数据标记
+      - 3.2.1 测试集内选取“信息”量最大的数据标记
+      - 3.2.2 依赖不确定度的样本选取策略（Uncertainty Sampling, US）
+      - 3.2.3 基于委员会查询的方法（Query-By-Committee，QBC）
+- [【关于 数据增强 之 对抗训练】 那些你不知道的事](Trick/SmallSampleProblem/AdversarialTraining/AdversarialTraining.md)
   - 一、介绍篇
-    - 1.1什么是逻辑回归
-    - 1.2逻辑回归的优势
-  - 二、推导篇
-    - 2.1逻辑回归推导
-    - 2.2求解优化
-- [【关于 支持向量机】 那些你不知道的事](MachineLearningAlgorithm/支持向量机.md)
-  - 一、原理篇
-    - 1.1 什么是SVM？
-      - Q.A
-    - 1.2 SVM怎么发展的？
-    - 1.3 SVM存在什么问题？
-      - Q.A
-  - 二、算法篇
-    - 2.1 什么是块算法？
-    - 2.2 什么是分解算法？
-    - 2.3 什么是序列最小优化算法？
-    - 2.4 什么是增量算法？
-      - Q.A
-  - 三、其他SVM篇
-    - 3.1 什么是最小二次支持向量机？
-    - 3.2 什么是模糊支持向量机？
-    - 3.3 什么是粒度支持向量机？
-    - 3.4 什么是多类训练算法？
-    - 3.5 什么是孪生支持向量机？
-    - 3.6 什么是排序支持向量机？
-      - Q.A
-  - 四、应用篇
-    - 4.1 模式识别
-    - 4.2 网页分类
-    - 4.3 系统建模与系统辨识
-    - 4.4 其他
-  - 五、对比篇
-  - 六、拓展篇
-- [【关于 集成学习】那些你不知道的事](MachineLearningAlgorithm/集成学习.md)
-  - 一、动机
-  - 二、集成学习介绍篇
-    - 2.1 介绍篇
-      - 2.1.1 集成学习的基本思想是什么？
-      - 2.1.2 集成学习为什么有效？
-  - 三、 Boosting 篇
-    - 3.1 用一句话概括 Boosting？
-    - 3.2 Boosting 的特点是什么？
-    - 3.3 Boosting 的基本思想是什么？
-    - 3.4 Boosting 的特点是什么？
-    - 3.5 GBDT 是什么？
-    - 3.6 Xgboost 是什么？
-  - 四、Bagging 篇
-    - 4.1 用一句话概括 Bagging？
-    - 4.2 Bagging 的特点是什么？
-    - 4.3 Bagging 的基本思想是什么？
-    - 4.4 Bagging 的基分类器如何选择？
-    - 4.5 Bagging 的优点 是什么？
-    - 4.6 Bagging 的特点是什么？
-    - 4.7 随机森林 是什么？
-  - 五、 Stacking 篇
-    - 5.1 用一句话概括 Stacking ？
-    - 5.2 Stacking 的特点是什么？
-    - 5.3 Stacking 的基本思路是什么？
-  - 六、常见问题篇
-    - 6.1 为什么使用决策树作为基学习器？
-    - 6.2 为什么不稳定的学习器更适合作为基学习器？
-    - 6.3 哪些模型适合作为基学习器？
-    - 6.4 Bagging 方法中能使用线性分类器作为基学习器吗？ Boosting 呢？
-    - 6.5 Boosting/Bagging 与 偏差/方差 的关系？
-  - 七、对比篇
-    - 7.1 LR vs GBDT?
-      - 7.1.1 从机器学习三要素的角度
-        - 7.1.1.1 从模型角度
-        - 7.1.1.2 从策略角度
-          - 7.1.1.2.1 从 Loss 角度
-          - 7.1.1.2.2 从 特征空间 角度
-          - 7.1.1.2.3 从 正则 角度
-        - 7.1.1.3 从算法角度
-      - 7.1.2 从特征的角度
-        - 7.1.2.1 特征组合
-        - 7.1.2.2 特特征的稀疏性
-      - 7.1.3  数据假设不同
-        - 7.1.3.1 LR
-        - 7.1.3.2 GBDT
-  - 参考
-### 三、[【关于 深度学习算法篇】那些你不知道的事](DeepLearningAlgorithm)
-  
-- [【关于 CNN 】那些你不知道的事](DeepLearningAlgorithm/cnn/)
-  - 一、动机篇
-  - 二、CNN 卷积层篇
-    - 2.1 卷积层的本质是什么？
-    - 2.2 CNN 卷积层与全连接层的联系？
-    - 2.3 channel的含义是什么？
-  - 三、CNN 池化层篇
-    - 3.1 池化层针对区域是什么？
-    - 3.2 池化层的种类有哪些？
-    - 3.3 池化层的作用是什么？
-    - 3.4 池化层 反向传播 是什么样的？
-    - 3.5 mean pooling 池化层 反向传播 是什么样的？
-    - 3.6 max pooling 池化层 反向传播 是什么样的？
-  - 四、CNN 整体篇
-    - 4.1 CNN 的流程是什么？
-    - 4.2 CNN 的特点是什么？
-    - 4.3 卷积神经网络为什么会具有平移不变性？
-    - 4.4 卷积神经网络中im2col是如何实现的？
-    - 4.5 CNN 的局限性是什么？
-  - 五、Iterated Dilated CNN 篇
-    - 5.1 什么是 Dilated CNN 空洞卷积？
-    - 5.2 什么是 Iterated Dilated CNN？
-  - 六、反卷积 篇
-    - 6.1 解释反卷积的原理和用途？
-- [【关于 Attention 】那些你不知道的事](DeepLearningAlgorithm/attention)
-  - 一、seq2seq 篇
-    - 1.1 seq2seq （Encoder-Decoder）是什么？
-    - 1.2 seq2seq 中 的 Encoder 怎么样？
-    - 1.3 seq2seq 中 的 Decoder 怎么样？
-    - 1.4 在 数学角度上 的 seq2seq ，你知道么？
-    - 1.5 seq2seq 存在 什么 问题？
-  - 二、Attention 篇
-    - 2.1 什么是 Attention?
-    - 2.2 为什么引入 Attention机制？
-    - 2.3 Attention 有什么作用？
-    - 2.4 Attention 流程是怎么样？
-      - 步骤一  执行encoder (与 seq2seq 一致)
-      - 步骤二  计算对齐系数 a
-      - 步骤三  计算上下文语义向量 C
-      - 步骤四  更新decoder状态
-      - 步骤五 计算输出预测词
-    - 2.5 Attention 的应用领域有哪些？
-  - 三、Attention 变体篇
-    - 3.1 Soft Attention 是什么？
-    - 3.2 Hard Attention 是什么？
-    - 3.3 Global Attention 是什么？
-    - 3.4 Local Attention 是什么？
-    - 3.5 self-attention 是什么？
-- [【关于 Transformer面试题】那些你不知道的事](DeepLearningAlgorithm/transformer)
-  - [【关于 Transformer】那些你不知道的事](DeepLearningAlgorithm/transformer/readme.md) 
-    - 一、动机篇
-      - 1.1 为什么要有 Transformer?
-      - 1.2 Transformer 作用是什么？
-    - 二、整体结构篇
-      - 2.1 Transformer 整体结构是怎么样？
-      - 2.2 Transformer-encoder 结构怎么样？
-      - 2.3 Transformer-decoder 结构怎么样?
-    - 三、模块篇
-      - 3.1 self-attention 模块
-        - 3.1.1 传统 attention 是什么?
-        - 3.1.2 为什么 会有self-attention?
-        - 3.1.3 self-attention 的核心思想是什么?
-        - 3.1.4 self-attention 的目的是什么?
-        - 3.1.5 self-attention 的怎么计算的?
-        - 3.1.6 self-attention 为什么Q和K使用不同的权重矩阵生成，为何不能使用同一个值进行自身的点乘？
-        - 3.1.7 为什么采用点积模型的 self-attention 而不采用加性模型？
-        - 3.1.8 Transformer 中在计算 self-attention 时为什么要除以 $\sqrt{d}$？
-        - 3.1.9 self-attention 如何解决长距离依赖问题？
-        - 3.1.10 self-attention 如何并行化？
-      - 3.2 multi-head attention 模块
-        - 3.2.1 multi-head attention 的思路是什么样?
-        - 3.2.2 multi-head attention 的步骤是什么样?
-        - 3.2.3 Transformer为何使用多头注意力机制？（为什么不使用一个头）
-        - 3.2.4 为什么在进行多头注意力的时候需要对每个head进行降维？
-        - 3.2.5 multi-head attention 代码介绍
-      - 3.3 位置编码（Position encoding）模块
-        - 3.3.1 为什么要 加入 位置编码（Position encoding） ？
-        - 3.3.2 位置编码（Position encoding）的思路是什么 ？
-        - 3.3.3 位置编码（Position encoding）的作用是什么 ？
-        - 3.3.4 位置编码（Position encoding）的步骤是什么 ？
-        - 3.3.5 Position encoding为什么选择相加而不是拼接呢？
-        - 3.3.6 Position encoding和 Position embedding的区别？
-        - 3.3.7 为何17年提出Transformer时采用的是 Position Encoder  而不是Position Embedding？而Bert却采用的是 Position Embedding ？
-        - 3.3.8 位置编码（Position encoding）的代码介绍
-      - 3.4 残差模块模块
-        - 3.4.1 为什么要 加入 残差模块？
-      - 3.5 Layer normalization 模块
-        - 3.5.1 为什么要 加入 Layer normalization 模块？
-        - 3.5.2 Layer normalization 模块的是什么？
-        - 3.5.3 Batch normalization 和 Layer normalization 的区别？
-        - 3.5.4 Transformer 中为什么要舍弃 Batch normalization 改用 Layer normalization 呢?
-        - 3.5.5  Layer normalization 模块代码介绍
-      - 3.6 Mask 模块
-        - 3.6.1 什么是 Mask？
-        - 3.6.2 Transformer 中用到 几种 Mask？
-        - 3.6.3 能不能介绍一下 Transformer 中用到几种 Mask？
-  - [【关于 Transformer 问题及改进】那些你不知道的事](DeepLearningAlgorithm/transformer/transformer_error.md) 
-    - 一、Transformer 问题篇
-      - 1.1 既然 Transformer 怎么牛逼，是否还存在一些问题？
-    - 二、每个问题的解决方法是什么？
-      - 2.1 问题一：Transformer 不能很好的处理超长输入问题
-        - 2.1.1 Transformer 固定了句子长度？
-        - 2.1.2 Transformer 固定了句子长度 的目的是什么？
-        - 2.1.3 Transformer 针对该问题的处理方法？
-      - 2.2 问题二：Transformer 方向信息以及相对位置 的 缺失 问题
-      - 2.3  问题三：缺少Recurrent Inductive Bias
-      - 问题四：问题四：Transformer是非图灵完备的： 非图灵完备通俗的理解，就是无法解决所有的问题
-      - 问题五：transformer缺少conditional computation；
-      - 问题六：transformer 时间复杂度 和 空间复杂度 过大问题；
-- [【关于 生成对抗网络 GAN 】 那些你不知道的事](DeepLearningAlgorithm/adversarial_training_study/readme.md)
-  - 一、动机
-  - 二、介绍篇
-    - 2.1 GAN 的基本思想
-    - 2.2 GAN 基本介绍
-      - 2.2.1  GAN 的基本结构
-      - 2.2.2 GAN 的基本思想
-  - 三、训练篇
-    - 3.1 生成器介绍
-    - 3.2 判别器介绍
-    - 3.3 训练过程
-    - 3.4  训练所涉及相关理论基础
-  - 四、总结
-- [【关于 RNN】那些你不知道的事](https://github.com/km1994/NLP-Interview-Notes/tree/main/DeepLearningAlgorithm/rnn#关于-rnn那些你不知道的事)
-  - 一、RNN 篇
-    - 1.2 为什么需要 RNN?
-    - 1.2 RNN 结构是怎么样的？
-    - 1.3 RNN 前向计算公式？
-    - 1.4 RNN 存在什么问题？
-  - 二、长短时记忆网络(Long Short Term Memory Network, LSTM) 篇
-    - 2.1 为什么 需要 LSTM?
-    - 2.2 LSTM 的结构是怎么样的?
-    - 2.3 LSTM 如何缓解 RNN 梯度消失和梯度爆炸问题?
-    - 2.3 LSTM 的流程是怎么样的?
-    - 2.4 LSTM 中激活函数区别?
-    - 2.5 LSTM的复杂度？
-    - 2.6 LSTM 存在什么问题？
-  - 三、GRU (Gated Recurrent Unit)
-    - 3.1 为什么 需要 GRU?
-    - 3.2 GRU 的结构是怎么样的?
-    - 3.3 GRU 的前向计算?
-    - 3.4 GRU 与其他 RNN系列模型的区别？
-  - 四、RNN系列模型篇
-    - 4.1 RNN系列模型 有什么特点？
-  - 参考
+    - 1.1 什么是 对抗训练 ？
+    - 1.2 为什么 对抗训练 能够 提高模型效果？
+    - 1.3  对抗训练 有什么特点？
+    - 1.4 对抗训练 的作用?
+  - 二、概念篇
+    - 2.1 对抗训练的基本概念?
+    - 2.2 如何计算扰动?
+    - 2.3 如何优化?
+  - 三、实战篇
+    - 3.1 NLP 中经典对抗训练 之  Fast Gradient Method（FGM）
+    - 3.2 NLP 中经典对抗训练 之  Projected Gradient Descent（PGD）
 
+#### 5.2 [【关于 脏数据】那些你不知道的事](Trick/noisy_label_learning/)
+
+- [【关于 “脏数据”处理】那些你不知道的事](Trick/noisy_label_learning/)
+  - 一、动机
+    - 1.1 何为“脏数据”？
+    - 1.2 “脏数据” 会带来什么后果？
+  - 二、“脏数据” 处理篇
+    - 2.1 “脏数据” 怎么处理呢？
+    - 2.2 置信学习方法篇
+      - 2.2.1 什么是 置信学习方法？
+      - 2.2.2 置信学习方法 优点？
+      - 2.2.3 置信学习方法 怎么做？
+      - 2.2.4 置信学习方法 怎么用？有什么开源框架？
+      - 2.2.5 置信学习方法 的工作原理？
+
+#### 5.3 [【关于 炼丹炉】那些你不知道的事](Trick/)
+
+- [【关于 batch_size设置】那些你不知道的事](https://articles.zsxq.com/id_64423hvlqv6w.html)
+  - 一、训练模型时，batch_size的设置，学习率的设置?
+
+#### 5.4 [【关于 早停法 EarlyStopping 】那些你不知道的事](Trick/EarlyStopping/)
+
+- [【关于 早停法 EarlyStopping 】那些你不知道的事](Trick/EarlyStopping/)
+  - 一、 为什么要用 早停法 EarlyStopping？
+  - 二、 早停法 EarlyStopping 是什么？
+  - 三、早停法 torch 版本怎么实现？
+
+#### 5.5 [【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](Trick/LabelSmoothing/)
+
+- [【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](Trick/LabelSmoothing/)
+  - 一、为什么要有 标签平滑法 LabelSmoothing？
+  - 二、 标签平滑法 是什么？
+  - 三、 标签平滑法 torch 怎么复现？
+
+#### 5.6 [【关于 Bert Trick】 那些你不知道的事](Trick/Bert_trick/)
+
+- [【关于 Bert 未登录词处理】 那些你不知道的事](Trick/Bert_trick/Bert_UNK_process/)
+  - 动机
+    - 中文预训练BERT 对于 英文单词覆盖不全问题。由于  中文预训练BERT 主要针对中文，所以词表中英文单词比较少，但是一般英文单词如果简单的直接使用tokenize函数，往往在一些序列预测问题上存在一些对齐问题，或者很多不存在的单词或符号没办法处理而直接使用　unk　替换了，某些英文单词或符号失去了单词的预训练效果；
+    - 专业领域（如医疗、金融）用词或中文偏僻词问题。NLP经常会用到预训练的语言模型，小到word2vector，大到bert。现在bert之类的基本都用char级别来训练，然而由于 Bert 等预训练模型都是采用开放域的语料进行预训练，所以对词汇覆盖的更多是日常用词，专业用词则覆盖不了，这时候该怎么处理？
+  - 方法
+    - 方法一：直接在 BERT 词表 vocab.txt 中替换 [unused]
+    - 方法二：通过重构词汇矩阵来增加新词
+    - 方法三：添加特殊占位符号 add_special_tokens
+  - 方法对比
+    - 方法一：
+      - 优点：如果存在大量领域内专业词汇，而且已经整理成词表，可以利用该方法批量添加；
+      - 缺点：因为 方法1 存在 未登录词数量限制（eg：cased模型只有99个空位，uncased模型有999个空位），所以当 未登录词 太多时，将不适用；
+    - 方法二：
+      - 优点：不存在 方法1 的 未登录词数量限制 问题；
+    - 方法三：
+      - 优点：对于一些 占位符（eg：<e></e>），方法一和方法二可能都无法生效，因为 <, e, >和 <e></e>均存在于 vocab.txt，但前三者的优先级高于 <e></e>，而 add_special_tokens会起效，却会使得词汇表大小增大，从而需另外调整模型size。但是，如果同时在词汇表vocab.txt中替换[unused]，同时 add_special_tokens，则新增词会起效，同时词汇表大小不变。
+
+- [【关于BERT在输入层引入额外特征】 那些你不知道的事](Trick/Bert_trick/Bert_import_new_features/)
+  - 邱锡鹏老师的flat : 他简单来说呢，是把词典拼在原文的输入的后面，然后和前面的词典的位置共享一个position的embedding。相当于呢是词典对原文进行了一种提示，引入了外部的知识。
+  - 在底层增加一个embedding层，就像bert原生的一样，从input-id-embedding、token-type-embedding和mask-embedding变成input-id-embedding、token-type-embedding、mask-embedding和keyword-embedding。输入，lookup之后，输出进行加和即可。这样的话，只需要随机初始化keyword-embedding就行，其他参数都可以加载原始参数;
+  - 在关键词前后加上特殊的标识符，让模型强行去学习，关键词的信息。
+
+- [【关于BERT 继续预训练】 那些你不知道的事](Trick/Bert_trick/Bert_continual_pre_training/)
+  - 【关于BERT 继续预训练】 那些你不知道的事
+    - 一、动机
+    - 二、什么是 继续预训练？
+    - 三、为什么会存在 【数据分布/领域差异】大 问题？
+    - 四、如何进行 继续预训练？
+      - 4.1 数据角度
+      - 4.2 训练参数角度
+      - 4.3 模型角度
+    - 五、还有哪些待解决问题？
+      - 5.1 训练数据问题
+      - 5.2 知识缺乏问题
+        - 5.2.1 知识缺乏问题描述
+        - 5.2.2 知识缺乏问题解决方法
+      - 5.3 知识理解缺乏问题
+        - 5.3.1 知识理解缺乏问题描述
+        - 5.3.2 知识理解缺乏问题解决方法
+    - 参考
+
+- [【关于BERT如何处理篇章级长文本】那些你不知道的事](https://articles.zsxq.com/id_e5aaclwgbwue.html)
+  - 一、动机
+  - 二、为什么 Bert 不能 处理 长文本？
+  - 三、解决方法
+    - 3.1 处理方法
+    - 3.2 从 消除限制角度 处理
+      - 3.2.1 从 消除限制角度 处理 思路？
+      - 3.2.2 从 消除限制角度 处理 如何处理？
+    - 3.3 从 语料角度 处理
+      - 3.2.1 从 语料角度 处理 思路？
+      - 3.2.2 从 语料角度 处理 如何处理？
+        - 3.2.2.1 Clipping（截断法）
+          - 3.2.2.1.1 Clipping（截断法）分类
+          - 3.2.2.1.2 Clipping（截断法） 如何选择
+          - 3.2.2.1.3 Clipping（截断法） 存在什么问题？
+        - 3.2.2.2 Pooling（池化法）【注：引用至 何枝】
+          - 3.2.2.2.1 Pooling（池化法）是什么？
+          - 3.2.2.2.2 Pooling（池化法）思路？
+          - 3.2.2.2.3 Pooling（池化法）实战？
+          - 3.2.2.2.4 Pooling（池化法）缺点？
+        - 3.2.2.3 划窗法
+          - 3.2.2.3.1 划窗法 思路介绍
+          - 3.2.2.3.2 划窗法 代码 实战
+          - 3.2.2.3.3 划窗法 缺点
+        - 3.2.2.4 压缩法
+          - 3.2.2.4.1 压缩法 动机
+          - 3.2.2.4.2 如何筛选出有效句子？
+        - 3.2.2.5 RNN（循环法）
+          - 3.2.2.5.1 RNN（循环法）思路
+    - 3.4 从 模型角度 处理
+      - 3.4.1 从 模型角度 处理 介绍
+      - 3.4.2 从 模型角度 处理 模型思路介绍
 
 ### 四、[【关于 NLP 学习算法】那些你不知道的事](NLPinterview)
 
@@ -1196,188 +1143,334 @@
 
 - [【关于生成模型的解码方法】那些你不知道的事](https://articles.zsxq.com/id_m3wckj5bhgu8.html)
 
-### 五、[【关于 NLP 技巧】那些你不知道的事](Trick)
+### 一、[【关于 基础算法篇】那些你不知道的事](BasicAlgorithm/)
 
-#### 5.1 [【关于 少样本问题】那些你不知道的事](Trick/SmallSampleProblem/)
+- [【关于 过拟合和欠拟合】那些你不知道的事](BasicAlgorithm/过拟合和欠拟合.md)
+  - 一、过拟合和欠拟合 是什么？
+  - 二、过拟合/高方差（overfiting / high variance）篇
+    - 2.1 过拟合是什么及检验方法？
+    - 2.2 导致过拟合的原因是什么？
+    - 2.3 过拟合的解决方法是什么？
+  - 三、欠拟合/高偏差（underfiting / high bias）篇
+    - 3.1 欠拟合是什么及检验方法？
+    - 3.2 导致欠拟合的原因是什么？
+    - 3.3 过拟合的解决方法是什么？
 
-- [【关于 EDA 】那些你不知道的事](Trick/SmallSampleProblem/EDA/eda.md)
+- [【关于 BatchNorm vs LayerNorm】那些你不知道的事](BasicAlgorithm/BatchNormVsLayerNorm.md)
   - 一、动机篇
-    - 1.1 什么是 数据增强？
-    - 1.2 为什么需要 数据增强？
-  - 二、常见的数据增强方法篇
-    - 2.1 词汇替换篇
-      - 2.1.1 什么是基于词典的替换方法？
-      - 2.1.2 什么是基于词向量的替换方法？
-      - 2.1.3 什么是基于 MLM 的替换方法？
-      - 2.1.4 什么是基于 TF-IDF 的词替换？
-    - 2.2 词汇插入篇
-      - 2.2.1 什么是随机插入法？
-    - 2.3 词汇交换篇
-      - 2.3.1 什么是随机交换法？
-    - 2.4 词汇删除篇
-      - 2.4.1 什么是随机删除法？
-    - 2.5 回译篇
-      - 2.5.1 什么是回译法？
-    - 2.6 交叉增强篇
-      - 2.6.1 什么是 交叉增强篇
-    - 2.7 语法树篇
-      - 2.7.1 什么是语法树操作？
-    - 2.8 对抗增强篇
-      - 2.8.1 什么是对抗增强？
-- [【关于 主动学习 】那些你不知道的事](Trick/SmallSampleProblem/activeLearn/readme.md)
+    - 1.1 独立同分布（independent and identically distributed）与白化
+    - 1.2 （ Internal Covariate Shift，ICS）
+    - 1.3 ICS问题带来的后果是什么？
+  - 二、Normalization 篇
+    - 2.1 Normalization 的通用框架与基本思想
+  - 三、Batch Normalization 篇
+    - 3.1 Batch Normalization（纵向规范化）是什么？
+    - 3.2 Batch Normalization（纵向规范化）存在什么问题？
+    - 3.3 Batch Normalization（纵向规范化）适用的场景是什么？
+    - 3.4 BatchNorm 存在什么问题？
+  - 四、Layer Normalization（横向规范化） 篇
+    - 4.1 Layer Normalization（横向规范化）是什么？
+    - 4.2 Layer Normalization（横向规范化）有什么用？
+  - 五、BN vs LN 篇
+  - 六、主流 Normalization 方法为什么有效？
+- [【关于 激活函数】那些你不知道的事](BasicAlgorithm/激活函数.md)
   - 一、动机篇
-    - 1.1 主动学习是什么？
-    - 1.2 为什么需要主动学习？
-  - 二、主动学习篇
-    - 2.1 主动学习的思路是什么？
-    - 2.2 主动学习方法 的价值点在哪里？
-  - 三、样本选取策略篇
-    - 3.1 以未标记样本的获取方式的差别进行划分
-    - 3.2 测试集内选取“信息”量最大的数据标记
-      - 3.2.1 测试集内选取“信息”量最大的数据标记
-      - 3.2.2 依赖不确定度的样本选取策略（Uncertainty Sampling, US）
-      - 3.2.3 基于委员会查询的方法（Query-By-Committee，QBC）
-- [【关于 数据增强 之 对抗训练】 那些你不知道的事](Trick/SmallSampleProblem/AdversarialTraining/AdversarialTraining.md)
+    - 1.1 为什么要有激活函数？
+  - 二、激活函数介绍篇
+    - 2.1 sigmoid 函数篇
+      - 2.1.1 什么是 sigmoid 函数？
+      - 2.1.2 为什么选 sigmoid 函数 作为激活函数？
+      - 2.1.3 sigmoid 函数 有什么缺点？
+    - 2.2 tanh 函数篇
+      - 2.2.1 什么是 tanh 函数？
+      - 2.2.2 为什么选 tanh 函数 作为激活函数？
+      - 2.2.3 tanh 函数 有什么缺点？
+    - 2.3 relu 函数篇
+      - 2.3.1 什么是 relu 函数？
+      - 2.3.2 为什么选 relu 函数 作为激活函数？
+      - 2.3.3 relu 函数 有什么缺点？
+  - 三、激活函数选择篇
+- [【关于 正则化】那些你不知道的事](BasicAlgorithm/正则化.md)
+  - 一、L0，L1，L2正则化 篇
+    - 1.1 正则化 是什么？
+    - 1.2 什么是 L0 正则化 ？
+    - 1.3 什么是 L1 （稀疏规则算子 Lasso regularization）正则化 ？
+    - 1.4 什么是 L2 正则化（岭回归 Ridge Regression 或者 权重衰减 Weight Decay）正则化 ？
+  - 二、对比篇
+    - 2.1 什么是结构风险最小化？
+    - 2.2 从结构风险最小化的角度理解L1和L2正则化
+    - 2.3 L1 vs L2
+  - 三、dropout 篇
+    - 3.1 什么是 dropout？
+    - 3.2 dropout 在训练和测试过程中如何操作？
+    - 3.3 dropout 如何防止过拟合?
+- [【关于 优化算法及函数】那些你不知道的事](BasicAlgorithm/优化算法及函数.md)
+  - 一、动机篇
+    - 1.1 为什么需要 优化函数？
+    - 1.2 优化函数的基本框架是什么?
+  - 二、优化函数介绍篇
+    - 2.1 梯度下降法是什么?
+    - 2.2 随机梯度下降法是什么?
+    - 2.3 Momentum 是什么?
+    - 2.4 SGD with Nesterov Acceleration 是什么?
+    - 2.5 Adagrad 是什么?
+    - 2.6 RMSProp/AdaDelta 是什么？
+    - 2.7 Adam 是什么?
+    - 2.8 Nadam 是什么?
+  - 三、优化函数学霸笔记篇
+- [【关于 归一化】那些你不知道的事](BasicAlgorithm/归一化.md)
+  - 一、动机篇
+    - 1.1 为什么要归一化？
+  - 二、介绍篇
+    - 2.1  归一化 有 哪些方法？
+    - 2.2  归一化 各方法 特点？
+    - 2.3  归一化 的 意义？
+  - 三、应用篇
+    - 3.1 哪些机器学习算法 需要做 归一化？
+    - 3.2 哪些机器学习算法 不需要做 归一化？
+- [【关于 判别式（discriminative）模型 vs. 生成式(generative)模型】 那些你不知道的事](BasicAlgorithm/判别式vs生成式.md)
+  - 一、判别式模型篇
+    - 1.1 什么是判别式模型？
+    - 1.2 判别式模型是思路是什么？
+    - 1.3 判别式模型的优点是什么？
+  - 二、生成式模型篇
+    - 2.1 什么是生成式模型？
+    - 2.2 生成式模型是思路是什么？
+    - 2.3 生成式模型的优点是什么？
+    - 2.4 生成式模型的缺点是什么？
+
+### 二、[【关于 机器学习算法篇】那些你不知道的事](MachineLearningAlgorithm)
+
+- [【关于 逻辑回归】那些你不知道的事](MachineLearningAlgorithm/逻辑回归.md)
   - 一、介绍篇
-    - 1.1 什么是 对抗训练 ？
-    - 1.2 为什么 对抗训练 能够 提高模型效果？
-    - 1.3  对抗训练 有什么特点？
-    - 1.4 对抗训练 的作用?
-  - 二、概念篇
-    - 2.1 对抗训练的基本概念?
-    - 2.2 如何计算扰动?
-    - 2.3 如何优化?
-  - 三、实战篇
-    - 3.1 NLP 中经典对抗训练 之  Fast Gradient Method（FGM）
-    - 3.2 NLP 中经典对抗训练 之  Projected Gradient Descent（PGD）
-
-#### 5.2 [【关于 脏数据】那些你不知道的事](Trick/noisy_label_learning/)
-
-- [【关于 “脏数据”处理】那些你不知道的事](Trick/noisy_label_learning/)
+    - 1.1什么是逻辑回归
+    - 1.2逻辑回归的优势
+  - 二、推导篇
+    - 2.1逻辑回归推导
+    - 2.2求解优化
+- [【关于 支持向量机】 那些你不知道的事](MachineLearningAlgorithm/支持向量机.md)
+  - 一、原理篇
+    - 1.1 什么是SVM？
+      - Q.A
+    - 1.2 SVM怎么发展的？
+    - 1.3 SVM存在什么问题？
+      - Q.A
+  - 二、算法篇
+    - 2.1 什么是块算法？
+    - 2.2 什么是分解算法？
+    - 2.3 什么是序列最小优化算法？
+    - 2.4 什么是增量算法？
+      - Q.A
+  - 三、其他SVM篇
+    - 3.1 什么是最小二次支持向量机？
+    - 3.2 什么是模糊支持向量机？
+    - 3.3 什么是粒度支持向量机？
+    - 3.4 什么是多类训练算法？
+    - 3.5 什么是孪生支持向量机？
+    - 3.6 什么是排序支持向量机？
+      - Q.A
+  - 四、应用篇
+    - 4.1 模式识别
+    - 4.2 网页分类
+    - 4.3 系统建模与系统辨识
+    - 4.4 其他
+  - 五、对比篇
+  - 六、拓展篇
+- [【关于 集成学习】那些你不知道的事](MachineLearningAlgorithm/集成学习.md)
   - 一、动机
-    - 1.1 何为“脏数据”？
-    - 1.2 “脏数据” 会带来什么后果？
-  - 二、“脏数据” 处理篇
-    - 2.1 “脏数据” 怎么处理呢？
-    - 2.2 置信学习方法篇
-      - 2.2.1 什么是 置信学习方法？
-      - 2.2.2 置信学习方法 优点？
-      - 2.2.3 置信学习方法 怎么做？
-      - 2.2.4 置信学习方法 怎么用？有什么开源框架？
-      - 2.2.5 置信学习方法 的工作原理？
+  - 二、集成学习介绍篇
+    - 2.1 介绍篇
+      - 2.1.1 集成学习的基本思想是什么？
+      - 2.1.2 集成学习为什么有效？
+  - 三、 Boosting 篇
+    - 3.1 用一句话概括 Boosting？
+    - 3.2 Boosting 的特点是什么？
+    - 3.3 Boosting 的基本思想是什么？
+    - 3.4 Boosting 的特点是什么？
+    - 3.5 GBDT 是什么？
+    - 3.6 Xgboost 是什么？
+  - 四、Bagging 篇
+    - 4.1 用一句话概括 Bagging？
+    - 4.2 Bagging 的特点是什么？
+    - 4.3 Bagging 的基本思想是什么？
+    - 4.4 Bagging 的基分类器如何选择？
+    - 4.5 Bagging 的优点 是什么？
+    - 4.6 Bagging 的特点是什么？
+    - 4.7 随机森林 是什么？
+  - 五、 Stacking 篇
+    - 5.1 用一句话概括 Stacking ？
+    - 5.2 Stacking 的特点是什么？
+    - 5.3 Stacking 的基本思路是什么？
+  - 六、常见问题篇
+    - 6.1 为什么使用决策树作为基学习器？
+    - 6.2 为什么不稳定的学习器更适合作为基学习器？
+    - 6.3 哪些模型适合作为基学习器？
+    - 6.4 Bagging 方法中能使用线性分类器作为基学习器吗？ Boosting 呢？
+    - 6.5 Boosting/Bagging 与 偏差/方差 的关系？
+  - 七、对比篇
+    - 7.1 LR vs GBDT?
+      - 7.1.1 从机器学习三要素的角度
+        - 7.1.1.1 从模型角度
+        - 7.1.1.2 从策略角度
+          - 7.1.1.2.1 从 Loss 角度
+          - 7.1.1.2.2 从 特征空间 角度
+          - 7.1.1.2.3 从 正则 角度
+        - 7.1.1.3 从算法角度
+      - 7.1.2 从特征的角度
+        - 7.1.2.1 特征组合
+        - 7.1.2.2 特特征的稀疏性
+      - 7.1.3  数据假设不同
+        - 7.1.3.1 LR
+        - 7.1.3.2 GBDT
+  - 参考
 
-#### 5.3 [【关于 炼丹炉】那些你不知道的事](Trick/)
-
-- [【关于 batch_size设置】那些你不知道的事](https://articles.zsxq.com/id_64423hvlqv6w.html)
-  - 一、训练模型时，batch_size的设置，学习率的设置?
-
-#### 5.4 [【关于 早停法 EarlyStopping 】那些你不知道的事](Trick/EarlyStopping/)
-
-- [【关于 早停法 EarlyStopping 】那些你不知道的事](Trick/EarlyStopping/)
-  - 一、 为什么要用 早停法 EarlyStopping？
-  - 二、 早停法 EarlyStopping 是什么？
-  - 三、早停法 torch 版本怎么实现？
-
-#### 5.5 [【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](Trick/LabelSmoothing/)
-
-- [【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](Trick/LabelSmoothing/)
-  - 一、为什么要有 标签平滑法 LabelSmoothing？
-  - 二、 标签平滑法 是什么？
-  - 三、 标签平滑法 torch 怎么复现？
-
-#### 5.6 [【关于 Bert Trick】 那些你不知道的事](Trick/Bert_trick/)
-
-- [【关于 Bert 未登录词处理】 那些你不知道的事](Trick/Bert_trick/Bert_UNK_process/)
-  - 动机
-    - 中文预训练BERT 对于 英文单词覆盖不全问题。由于  中文预训练BERT 主要针对中文，所以词表中英文单词比较少，但是一般英文单词如果简单的直接使用tokenize函数，往往在一些序列预测问题上存在一些对齐问题，或者很多不存在的单词或符号没办法处理而直接使用　unk　替换了，某些英文单词或符号失去了单词的预训练效果；
-    - 专业领域（如医疗、金融）用词或中文偏僻词问题。NLP经常会用到预训练的语言模型，小到word2vector，大到bert。现在bert之类的基本都用char级别来训练，然而由于 Bert 等预训练模型都是采用开放域的语料进行预训练，所以对词汇覆盖的更多是日常用词，专业用词则覆盖不了，这时候该怎么处理？
-  - 方法
-    - 方法一：直接在 BERT 词表 vocab.txt 中替换 [unused]
-    - 方法二：通过重构词汇矩阵来增加新词
-    - 方法三：添加特殊占位符号 add_special_tokens
-  - 方法对比
-    - 方法一：
-      - 优点：如果存在大量领域内专业词汇，而且已经整理成词表，可以利用该方法批量添加；
-      - 缺点：因为 方法1 存在 未登录词数量限制（eg：cased模型只有99个空位，uncased模型有999个空位），所以当 未登录词 太多时，将不适用；
-    - 方法二：
-      - 优点：不存在 方法1 的 未登录词数量限制 问题；
-    - 方法三：
-      - 优点：对于一些 占位符（eg：<e></e>），方法一和方法二可能都无法生效，因为 <, e, >和 <e></e>均存在于 vocab.txt，但前三者的优先级高于 <e></e>，而 add_special_tokens会起效，却会使得词汇表大小增大，从而需另外调整模型size。但是，如果同时在词汇表vocab.txt中替换[unused]，同时 add_special_tokens，则新增词会起效，同时词汇表大小不变。
-
-- [【关于BERT在输入层引入额外特征】 那些你不知道的事](Trick/Bert_trick/Bert_import_new_features/)
-  - 邱锡鹏老师的flat : 他简单来说呢，是把词典拼在原文的输入的后面，然后和前面的词典的位置共享一个position的embedding。相当于呢是词典对原文进行了一种提示，引入了外部的知识。
-  - 在底层增加一个embedding层，就像bert原生的一样，从input-id-embedding、token-type-embedding和mask-embedding变成input-id-embedding、token-type-embedding、mask-embedding和keyword-embedding。输入，lookup之后，输出进行加和即可。这样的话，只需要随机初始化keyword-embedding就行，其他参数都可以加载原始参数;
-  - 在关键词前后加上特殊的标识符，让模型强行去学习，关键词的信息。
-
-- [【关于BERT 继续预训练】 那些你不知道的事](Trick/Bert_trick/Bert_continual_pre_training/)
-  - 【关于BERT 继续预训练】 那些你不知道的事
-    - 一、动机
-    - 二、什么是 继续预训练？
-    - 三、为什么会存在 【数据分布/领域差异】大 问题？
-    - 四、如何进行 继续预训练？
-      - 4.1 数据角度
-      - 4.2 训练参数角度
-      - 4.3 模型角度
-    - 五、还有哪些待解决问题？
-      - 5.1 训练数据问题
-      - 5.2 知识缺乏问题
-        - 5.2.1 知识缺乏问题描述
-        - 5.2.2 知识缺乏问题解决方法
-      - 5.3 知识理解缺乏问题
-        - 5.3.1 知识理解缺乏问题描述
-        - 5.3.2 知识理解缺乏问题解决方法
-    - 参考
-
-- [【关于BERT如何处理篇章级长文本】那些你不知道的事](https://articles.zsxq.com/id_e5aaclwgbwue.html)
+### 三、[【关于 深度学习算法篇】那些你不知道的事](DeepLearningAlgorithm)
+  
+- [【关于 CNN 】那些你不知道的事](DeepLearningAlgorithm/cnn/)
+  - 一、动机篇
+  - 二、CNN 卷积层篇
+    - 2.1 卷积层的本质是什么？
+    - 2.2 CNN 卷积层与全连接层的联系？
+    - 2.3 channel的含义是什么？
+  - 三、CNN 池化层篇
+    - 3.1 池化层针对区域是什么？
+    - 3.2 池化层的种类有哪些？
+    - 3.3 池化层的作用是什么？
+    - 3.4 池化层 反向传播 是什么样的？
+    - 3.5 mean pooling 池化层 反向传播 是什么样的？
+    - 3.6 max pooling 池化层 反向传播 是什么样的？
+  - 四、CNN 整体篇
+    - 4.1 CNN 的流程是什么？
+    - 4.2 CNN 的特点是什么？
+    - 4.3 卷积神经网络为什么会具有平移不变性？
+    - 4.4 卷积神经网络中im2col是如何实现的？
+    - 4.5 CNN 的局限性是什么？
+  - 五、Iterated Dilated CNN 篇
+    - 5.1 什么是 Dilated CNN 空洞卷积？
+    - 5.2 什么是 Iterated Dilated CNN？
+  - 六、反卷积 篇
+    - 6.1 解释反卷积的原理和用途？
+- [【关于 Attention 】那些你不知道的事](DeepLearningAlgorithm/attention)
+  - 一、seq2seq 篇
+    - 1.1 seq2seq （Encoder-Decoder）是什么？
+    - 1.2 seq2seq 中 的 Encoder 怎么样？
+    - 1.3 seq2seq 中 的 Decoder 怎么样？
+    - 1.4 在 数学角度上 的 seq2seq ，你知道么？
+    - 1.5 seq2seq 存在 什么 问题？
+  - 二、Attention 篇
+    - 2.1 什么是 Attention?
+    - 2.2 为什么引入 Attention机制？
+    - 2.3 Attention 有什么作用？
+    - 2.4 Attention 流程是怎么样？
+      - 步骤一  执行encoder (与 seq2seq 一致)
+      - 步骤二  计算对齐系数 a
+      - 步骤三  计算上下文语义向量 C
+      - 步骤四  更新decoder状态
+      - 步骤五 计算输出预测词
+    - 2.5 Attention 的应用领域有哪些？
+  - 三、Attention 变体篇
+    - 3.1 Soft Attention 是什么？
+    - 3.2 Hard Attention 是什么？
+    - 3.3 Global Attention 是什么？
+    - 3.4 Local Attention 是什么？
+    - 3.5 self-attention 是什么？
+- [【关于 Transformer面试题】那些你不知道的事](DeepLearningAlgorithm/transformer)
+  - [【关于 Transformer】那些你不知道的事](DeepLearningAlgorithm/transformer/readme.md) 
+    - 一、动机篇
+      - 1.1 为什么要有 Transformer?
+      - 1.2 Transformer 作用是什么？
+    - 二、整体结构篇
+      - 2.1 Transformer 整体结构是怎么样？
+      - 2.2 Transformer-encoder 结构怎么样？
+      - 2.3 Transformer-decoder 结构怎么样?
+    - 三、模块篇
+      - 3.1 self-attention 模块
+        - 3.1.1 传统 attention 是什么?
+        - 3.1.2 为什么 会有self-attention?
+        - 3.1.3 self-attention 的核心思想是什么?
+        - 3.1.4 self-attention 的目的是什么?
+        - 3.1.5 self-attention 的怎么计算的?
+        - 3.1.6 self-attention 为什么Q和K使用不同的权重矩阵生成，为何不能使用同一个值进行自身的点乘？
+        - 3.1.7 为什么采用点积模型的 self-attention 而不采用加性模型？
+        - 3.1.8 Transformer 中在计算 self-attention 时为什么要除以 $\sqrt{d}$？
+        - 3.1.9 self-attention 如何解决长距离依赖问题？
+        - 3.1.10 self-attention 如何并行化？
+      - 3.2 multi-head attention 模块
+        - 3.2.1 multi-head attention 的思路是什么样?
+        - 3.2.2 multi-head attention 的步骤是什么样?
+        - 3.2.3 Transformer为何使用多头注意力机制？（为什么不使用一个头）
+        - 3.2.4 为什么在进行多头注意力的时候需要对每个head进行降维？
+        - 3.2.5 multi-head attention 代码介绍
+      - 3.3 位置编码（Position encoding）模块
+        - 3.3.1 为什么要 加入 位置编码（Position encoding） ？
+        - 3.3.2 位置编码（Position encoding）的思路是什么 ？
+        - 3.3.3 位置编码（Position encoding）的作用是什么 ？
+        - 3.3.4 位置编码（Position encoding）的步骤是什么 ？
+        - 3.3.5 Position encoding为什么选择相加而不是拼接呢？
+        - 3.3.6 Position encoding和 Position embedding的区别？
+        - 3.3.7 为何17年提出Transformer时采用的是 Position Encoder  而不是Position Embedding？而Bert却采用的是 Position Embedding ？
+        - 3.3.8 位置编码（Position encoding）的代码介绍
+      - 3.4 残差模块模块
+        - 3.4.1 为什么要 加入 残差模块？
+      - 3.5 Layer normalization 模块
+        - 3.5.1 为什么要 加入 Layer normalization 模块？
+        - 3.5.2 Layer normalization 模块的是什么？
+        - 3.5.3 Batch normalization 和 Layer normalization 的区别？
+        - 3.5.4 Transformer 中为什么要舍弃 Batch normalization 改用 Layer normalization 呢?
+        - 3.5.5  Layer normalization 模块代码介绍
+      - 3.6 Mask 模块
+        - 3.6.1 什么是 Mask？
+        - 3.6.2 Transformer 中用到 几种 Mask？
+        - 3.6.3 能不能介绍一下 Transformer 中用到几种 Mask？
+  - [【关于 Transformer 问题及改进】那些你不知道的事](DeepLearningAlgorithm/transformer/transformer_error.md) 
+    - 一、Transformer 问题篇
+      - 1.1 既然 Transformer 怎么牛逼，是否还存在一些问题？
+    - 二、每个问题的解决方法是什么？
+      - 2.1 问题一：Transformer 不能很好的处理超长输入问题
+        - 2.1.1 Transformer 固定了句子长度？
+        - 2.1.2 Transformer 固定了句子长度 的目的是什么？
+        - 2.1.3 Transformer 针对该问题的处理方法？
+      - 2.2 问题二：Transformer 方向信息以及相对位置 的 缺失 问题
+      - 2.3  问题三：缺少Recurrent Inductive Bias
+      - 问题四：问题四：Transformer是非图灵完备的： 非图灵完备通俗的理解，就是无法解决所有的问题
+      - 问题五：transformer缺少conditional computation；
+      - 问题六：transformer 时间复杂度 和 空间复杂度 过大问题；
+- [【关于 生成对抗网络 GAN 】 那些你不知道的事](DeepLearningAlgorithm/adversarial_training_study/readme.md)
   - 一、动机
-  - 二、为什么 Bert 不能 处理 长文本？
-  - 三、解决方法
-    - 3.1 处理方法
-    - 3.2 从 消除限制角度 处理
-      - 3.2.1 从 消除限制角度 处理 思路？
-      - 3.2.2 从 消除限制角度 处理 如何处理？
-    - 3.3 从 语料角度 处理
-      - 3.2.1 从 语料角度 处理 思路？
-      - 3.2.2 从 语料角度 处理 如何处理？
-        - 3.2.2.1 Clipping（截断法）
-          - 3.2.2.1.1 Clipping（截断法）分类
-          - 3.2.2.1.2 Clipping（截断法） 如何选择
-          - 3.2.2.1.3 Clipping（截断法） 存在什么问题？
-        - 3.2.2.2 Pooling（池化法）【注：引用至 何枝】
-          - 3.2.2.2.1 Pooling（池化法）是什么？
-          - 3.2.2.2.2 Pooling（池化法）思路？
-          - 3.2.2.2.3 Pooling（池化法）实战？
-          - 3.2.2.2.4 Pooling（池化法）缺点？
-        - 3.2.2.3 划窗法
-          - 3.2.2.3.1 划窗法 思路介绍
-          - 3.2.2.3.2 划窗法 代码 实战
-          - 3.2.2.3.3 划窗法 缺点
-        - 3.2.2.4 压缩法
-          - 3.2.2.4.1 压缩法 动机
-          - 3.2.2.4.2 如何筛选出有效句子？
-        - 3.2.2.5 RNN（循环法）
-          - 3.2.2.5.1 RNN（循环法）思路
-    - 3.4 从 模型角度 处理
-      - 3.4.1 从 模型角度 处理 介绍
-      - 3.4.2 从 模型角度 处理 模型思路介绍
+  - 二、介绍篇
+    - 2.1 GAN 的基本思想
+    - 2.2 GAN 基本介绍
+      - 2.2.1  GAN 的基本结构
+      - 2.2.2 GAN 的基本思想
+  - 三、训练篇
+    - 3.1 生成器介绍
+    - 3.2 判别器介绍
+    - 3.3 训练过程
+    - 3.4  训练所涉及相关理论基础
+  - 四、总结
+- [【关于 RNN】那些你不知道的事](https://github.com/km1994/NLP-Interview-Notes/tree/main/DeepLearningAlgorithm/rnn#关于-rnn那些你不知道的事)
+  - 一、RNN 篇
+    - 1.2 为什么需要 RNN?
+    - 1.2 RNN 结构是怎么样的？
+    - 1.3 RNN 前向计算公式？
+    - 1.4 RNN 存在什么问题？
+  - 二、长短时记忆网络(Long Short Term Memory Network, LSTM) 篇
+    - 2.1 为什么 需要 LSTM?
+    - 2.2 LSTM 的结构是怎么样的?
+    - 2.3 LSTM 如何缓解 RNN 梯度消失和梯度爆炸问题?
+    - 2.3 LSTM 的流程是怎么样的?
+    - 2.4 LSTM 中激活函数区别?
+    - 2.5 LSTM的复杂度？
+    - 2.6 LSTM 存在什么问题？
+  - 三、GRU (Gated Recurrent Unit)
+    - 3.1 为什么 需要 GRU?
+    - 3.2 GRU 的结构是怎么样的?
+    - 3.3 GRU 的前向计算?
+    - 3.4 GRU 与其他 RNN系列模型的区别？
+  - 四、RNN系列模型篇
+    - 4.1 RNN系列模型 有什么特点？
+  - 参考
 
-### 六、 [【关于 Prompt】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
-
-- [【关于 Prompt】 那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
-- [【关于Prompt之文本生成】 那些你不知道的事](https://articles.zsxq.com/id_po1gopdolinx.html)
-- [【关于 LoRA】那些你不知道的事](https://articles.zsxq.com/id_da8pumsjwbqw.html)
-
-### 七、[【关于 LLMs】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
-
-- [【关于 GPT / GPT-2 / GPT-3 / InstructGPT 】那些你不知道的事](https://articles.zsxq.com/id_ik77qgnqtk6w.html)
-- [【每日一面】现在达模型LLM，微调方式有哪些？各有什么优缺点？](https://articles.zsxq.com/id_i6uv0mtg4mah.html)
-- [【NLP百面百搭】LLM若干问题备忘](https://articles.zsxq.com/id_gon71zogm6k9.html)
-- [【NLP百面百搭】为什么现在的LLM都是Decoder only的架构？](https://articles.zsxq.com/id_wgoabuow5m1t.html)
-
-
-### 八、 [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
-
-- [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
 
 
 ### 九、[【关于 Python 】那些你不知道的事](python/)
