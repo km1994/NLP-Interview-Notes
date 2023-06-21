@@ -45,9 +45,6 @@
   - [目录架构](#目录架构)
   - [手机版 NLP 百面百搭](#手机版-nlp-百面百搭)
   - [内容框架](#内容框架)
-    - [六、 【关于 Tuning 】那些你不知道的事](#六-关于-tuning-那些你不知道的事)
-    - [七、【关于 LLMs】那些你不知道的事](#七关于-llms那些你不知道的事)
-    - [八、 【关于 AIGC】那些你不知道的事](#八-关于-aigc那些你不知道的事)
     - [五、【关于 NLP 技巧】那些你不知道的事](#五关于-nlp-技巧那些你不知道的事)
       - [5.1 【关于 少样本问题】那些你不知道的事](#51-关于-少样本问题那些你不知道的事)
       - [5.2 【关于 脏数据】那些你不知道的事](#52-关于-脏数据那些你不知道的事)
@@ -55,6 +52,9 @@
       - [5.4 【关于 早停法 EarlyStopping 】那些你不知道的事](#54-关于-早停法-earlystopping-那些你不知道的事)
       - [5.5 【关于 标签平滑法 LabelSmoothing 】那些你不知道的事](#55-关于-标签平滑法-labelsmoothing-那些你不知道的事)
       - [5.6 【关于 Bert Trick】 那些你不知道的事](#56-关于-bert-trick-那些你不知道的事)
+    - [六、 【关于 Tuning 】那些你不知道的事](#六-关于-tuning-那些你不知道的事)
+    - [七、【关于 LLMs】那些你不知道的事](#七关于-llms那些你不知道的事)
+    - [八、 【关于 AIGC】那些你不知道的事](#八-关于-aigc那些你不知道的事)
     - [四、【关于 NLP 学习算法】那些你不知道的事](#四关于-nlp-学习算法那些你不知道的事)
       - [4.1 【关于 信息抽取】那些你不知道的事](#41-关于-信息抽取那些你不知道的事)
         - [4.1.1 【关于 命名实体识别】那些你不知道的事](#411-关于-命名实体识别那些你不知道的事)
@@ -88,116 +88,6 @@
 - **[手机版NLP百面百搭](https://mp.weixin.qq.com/s?__biz=MzAxMTU5Njg4NQ==&mid=100005719&idx=3&sn=5d8e62993e5ecd4582703684c0d12e44&chksm=1bbff26d2cc87b7bf2504a8a4cafc60919d722b6e9acbcee81a626924d80f53a49301df9bd97&scene=18#wechat_redirect)**
 
 ## 内容框架
-
-### 六、 [【关于 Tuning 】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
-
-- [【关于 Prompt】 那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
-- [【关于Prompt之文本生成】 那些你不知道的事](https://articles.zsxq.com/id_po1gopdolinx.html)
-- [【关于 LoRA】那些你不知道的事](https://articles.zsxq.com/id_da8pumsjwbqw.html)
-- [PEFT: State-of-the-art Parameter-Efficient Fine-Tuning 百面百搭](https://articles.zsxq.com/id_2r4w85eov81e.html)
-  - 一、微调 Fine-tuning 篇
-    - 1.1 什么是 微调 Fine-tuning ？
-    - 1.2 微调 Fine-tuning 基本思想是什么？
-  - 二、轻度微调（lightweight Fine-tuning）篇
-    - 2.1 什么是 轻度微调（lightweight Fine-tuning）？
-  - 三、适配器微调（Adapter-tuning）篇
-    - 3.1 什么 是 适配器微调（Adapter-tuning）？
-    - 3.2 适配器微调（Adapter-tuning）变体有哪些？
-      - 3.2.1 AdapterH
-      - 3.2.2 AdapterL
-      - 3.2.3 AdapterP
-      - 3.2.4 AdapterD
-  - 四、提示学习（Prompting）篇
-    - 4.1 什么是 提示学习（Prompting）？
-    - 4.2 提示学习（Prompting）的目的是什么？
-    - 4.3 提示学习（Prompting） 代表方法有哪些？
-      - 4.3.1 前缀微调（Prefix-tining）篇
-        - 4.3.1.1 什么是 前缀微调（Prefix-tining）？
-        - 4.3.1.2 前缀微调（Prefix-tining）的核心是什么？
-        - 4.3.1.3 前缀微调（Prefix-tining）的技术细节有哪些？
-        - 4.3.1.4 前缀微调（Prefix-tining）的优点是什么？
-        - 4.3.1.5 前缀微调（Prefix-tining）的缺点是什么？
-      - 4.3.2 指示微调（Prompt-tuning）篇
-        - 4.3.2.1 什么是 指示微调（Prompt-tuning）？
-        - 4.3.2.2 指示微调（Prompt-tuning）的核心思想？
-        - 4.3.2.3 指示微调（Prompt-tuning）的 优点/贡献 是什么？
-        - 4.3.2.4 指示微调（Prompt-tuning）的 缺点 是什么？
-        - 4.3.2.5 指示微调（Prompt-tuning）与 Prefix-tuning 区别 是什么？
-        - 4.3.2.6 指示微调（Prompt-tuning）与 fine-tuning 区别 是什么？
-      - 4.3.3 P-tuning 篇
-        - 4.3.3.1 P-tuning 动机是什么？
-        - 4.3.3.2 P-tuning 核心思想是什么？
-        - 4.3.3.3 P-tuning 做了哪些改进？
-        - 4.3.3.4 P-tuning 有哪些优点/贡献？
-        - 4.3.3.5 P-tuning 有哪些缺点？
-      - 4.3.4 P-tuning v2 篇
-        - 4.3.4.1 为什么需要 P-tuning v2？
-        - 4.3.4.2 P-tuning v2 是什么？
-        - 4.3.4.3 P-tuning v2 有哪些优点？
-        - 4.3.4.4 P-tuning v2 有哪些缺点？
-      - 4.3.5 PPT 篇
-        - 4.3.5.1 为什么需要 PPT ？
-        - 4.3.5.2 PPT 核心思想 是什么？
-        - 4.3.5.3 PPT 具体做法是怎么样？
-        - 4.3.5.4 常用的soft prompt初始化方法？
-        - 4.3.5.5 PPT 的优点是什么？
-        - 4.3.5.6 PPT 的缺点是什么？
-    - 4.4 提示学习（Prompting） 优点 是什么？
-    - 4.5 提示学习（Prompting） 本质 是什么？
-  - 五、指令微调（Instruct-tuning）篇
-    - 5.1 为什么需要 指令微调（Instruct-tuning）？
-    - 5.2 指令微调（Instruct-tuning）是什么？
-    - 5.3 指令微调（Instruct-tuning）的优点是什么？
-    - 5.4 指令微调（Instruct-tuning） vs 提升学习（Prompting）？
-    - 5.5 指令微调（Instruct-tuning） vs 提升学习（Prompting） vs Fine-tuning？
-  - 六、指令提示微调（Instruct Prompt tuning）篇
-    - 6.1 为什么需要 指令微调（Instruct-tuning）？
-    - 6.2 指令微调（Instruct-tuning） 是什么？
-    - 6.3 指令微调（Instruct-tuning） 在不同任务上性能？
-  - 七、self-instruct篇
-    - 7.1 什么是 self-instruct？
-  - 八、Chain-of-Thought 篇
-    - 8.1 为什么需要 Chain-of-Thought ？
-    - 8.2 什么是 Chain-of-Thought ？
-    - 8.3 Chain-of-Thought 的思路是怎么样的？
-    - 8.4 Chain-of-Thought 的优点是什么？
-    - 8.5 为什么 chain-of-thought 会成功？
-  - 九、LoRA 篇
-    - 9.1 LoRA 篇
-      - 9.1.1 LoRA 核心思想是什么？
-      - 9.1.2 LoRA 具体思路是什么？
-      - 9.1.3 LoRA 优点是什么？
-      - 9.1.4 LoRA 缺点是什么？
-    - 9.2 AdaLoRA 篇
-      - 9.2.1 AdaLoRA 核心思想是什么？
-      - 9.2.2 AdaLoRA 实现思路是什么？
-    - 9.3  DyLoRA 篇
-      - 9.3.1 AdaLoRA 动机是什么？
-      - 9.3.2 AdaLoRA 核心思想是什么？
-      - 9.3.3 AdaLoRA 优点是什么？
-  - 十、BitFit 篇
-    - 10.1 AdaLoRA 核心思想是什么？
-    - 10.2 AdaLoRA 优点是什么？
-    - 10.3 AdaLoRA 缺点是什么？
-  - 参考
-
-### 七、[【关于 LLMs】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
-
-- [【关于 GPT / GPT-2 / GPT-3 / InstructGPT 】那些你不知道的事](https://articles.zsxq.com/id_ik77qgnqtk6w.html)
-- [【每日一面】现在达模型LLM，微调方式有哪些？各有什么优缺点？](https://articles.zsxq.com/id_i6uv0mtg4mah.html)
-- [【NLP百面百搭】LLM若干问题备忘](https://articles.zsxq.com/id_gon71zogm6k9.html)
-- [【NLP百面百搭】为什么现在的LLM都是Decoder only的架构？](https://articles.zsxq.com/id_wgoabuow5m1t.html)
-- [【关于 GLM：ChatGLM的基座模型】那些你不知道的事](https://articles.zsxq.com/id_bwx8btw6h2p1.html)
-  - 一、GLM 的 核心是什么？
-  - 二、GLM 的 模型架构是什么？
-  - 三、GLM 如何进行 多任务训练？
-  - 四、在进行 NLG 时， GLM 如何保证 生成长度的未知性？
-  - 五、GLM 的 多任务微调方式有什么差异？
-  - 六、GLM 的 多任务微调方式有什么优点？
-
-### 八、 [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
-
-- [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
 
 ### 五、[【关于 NLP 技巧】那些你不知道的事](Trick)
 
@@ -363,6 +253,117 @@
     - 3.4 从 模型角度 处理
       - 3.4.1 从 模型角度 处理 介绍
       - 3.4.2 从 模型角度 处理 模型思路介绍
+
+
+### 六、 [【关于 Tuning 】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
+
+- [【关于 Prompt】 那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
+- [【关于Prompt之文本生成】 那些你不知道的事](https://articles.zsxq.com/id_po1gopdolinx.html)
+- [【关于 LoRA】那些你不知道的事](https://articles.zsxq.com/id_da8pumsjwbqw.html)
+- [PEFT: State-of-the-art Parameter-Efficient Fine-Tuning 百面百搭](https://articles.zsxq.com/id_2r4w85eov81e.html)
+  - 一、微调 Fine-tuning 篇
+    - 1.1 什么是 微调 Fine-tuning ？
+    - 1.2 微调 Fine-tuning 基本思想是什么？
+  - 二、轻度微调（lightweight Fine-tuning）篇
+    - 2.1 什么是 轻度微调（lightweight Fine-tuning）？
+  - 三、适配器微调（Adapter-tuning）篇
+    - 3.1 什么 是 适配器微调（Adapter-tuning）？
+    - 3.2 适配器微调（Adapter-tuning）变体有哪些？
+      - 3.2.1 AdapterH
+      - 3.2.2 AdapterL
+      - 3.2.3 AdapterP
+      - 3.2.4 AdapterD
+  - 四、提示学习（Prompting）篇
+    - 4.1 什么是 提示学习（Prompting）？
+    - 4.2 提示学习（Prompting）的目的是什么？
+    - 4.3 提示学习（Prompting） 代表方法有哪些？
+      - 4.3.1 前缀微调（Prefix-tining）篇
+        - 4.3.1.1 什么是 前缀微调（Prefix-tining）？
+        - 4.3.1.2 前缀微调（Prefix-tining）的核心是什么？
+        - 4.3.1.3 前缀微调（Prefix-tining）的技术细节有哪些？
+        - 4.3.1.4 前缀微调（Prefix-tining）的优点是什么？
+        - 4.3.1.5 前缀微调（Prefix-tining）的缺点是什么？
+      - 4.3.2 指示微调（Prompt-tuning）篇
+        - 4.3.2.1 什么是 指示微调（Prompt-tuning）？
+        - 4.3.2.2 指示微调（Prompt-tuning）的核心思想？
+        - 4.3.2.3 指示微调（Prompt-tuning）的 优点/贡献 是什么？
+        - 4.3.2.4 指示微调（Prompt-tuning）的 缺点 是什么？
+        - 4.3.2.5 指示微调（Prompt-tuning）与 Prefix-tuning 区别 是什么？
+        - 4.3.2.6 指示微调（Prompt-tuning）与 fine-tuning 区别 是什么？
+      - 4.3.3 P-tuning 篇
+        - 4.3.3.1 P-tuning 动机是什么？
+        - 4.3.3.2 P-tuning 核心思想是什么？
+        - 4.3.3.3 P-tuning 做了哪些改进？
+        - 4.3.3.4 P-tuning 有哪些优点/贡献？
+        - 4.3.3.5 P-tuning 有哪些缺点？
+      - 4.3.4 P-tuning v2 篇
+        - 4.3.4.1 为什么需要 P-tuning v2？
+        - 4.3.4.2 P-tuning v2 是什么？
+        - 4.3.4.3 P-tuning v2 有哪些优点？
+        - 4.3.4.4 P-tuning v2 有哪些缺点？
+      - 4.3.5 PPT 篇
+        - 4.3.5.1 为什么需要 PPT ？
+        - 4.3.5.2 PPT 核心思想 是什么？
+        - 4.3.5.3 PPT 具体做法是怎么样？
+        - 4.3.5.4 常用的soft prompt初始化方法？
+        - 4.3.5.5 PPT 的优点是什么？
+        - 4.3.5.6 PPT 的缺点是什么？
+    - 4.4 提示学习（Prompting） 优点 是什么？
+    - 4.5 提示学习（Prompting） 本质 是什么？
+  - 五、指令微调（Instruct-tuning）篇
+    - 5.1 为什么需要 指令微调（Instruct-tuning）？
+    - 5.2 指令微调（Instruct-tuning）是什么？
+    - 5.3 指令微调（Instruct-tuning）的优点是什么？
+    - 5.4 指令微调（Instruct-tuning） vs 提升学习（Prompting）？
+    - 5.5 指令微调（Instruct-tuning） vs 提升学习（Prompting） vs Fine-tuning？
+  - 六、指令提示微调（Instruct Prompt tuning）篇
+    - 6.1 为什么需要 指令微调（Instruct-tuning）？
+    - 6.2 指令微调（Instruct-tuning） 是什么？
+    - 6.3 指令微调（Instruct-tuning） 在不同任务上性能？
+  - 七、self-instruct篇
+    - 7.1 什么是 self-instruct？
+  - 八、Chain-of-Thought 篇
+    - 8.1 为什么需要 Chain-of-Thought ？
+    - 8.2 什么是 Chain-of-Thought ？
+    - 8.3 Chain-of-Thought 的思路是怎么样的？
+    - 8.4 Chain-of-Thought 的优点是什么？
+    - 8.5 为什么 chain-of-thought 会成功？
+  - 九、LoRA 篇
+    - 9.1 LoRA 篇
+      - 9.1.1 LoRA 核心思想是什么？
+      - 9.1.2 LoRA 具体思路是什么？
+      - 9.1.3 LoRA 优点是什么？
+      - 9.1.4 LoRA 缺点是什么？
+    - 9.2 AdaLoRA 篇
+      - 9.2.1 AdaLoRA 核心思想是什么？
+      - 9.2.2 AdaLoRA 实现思路是什么？
+    - 9.3  DyLoRA 篇
+      - 9.3.1 AdaLoRA 动机是什么？
+      - 9.3.2 AdaLoRA 核心思想是什么？
+      - 9.3.3 AdaLoRA 优点是什么？
+  - 十、BitFit 篇
+    - 10.1 AdaLoRA 核心思想是什么？
+    - 10.2 AdaLoRA 优点是什么？
+    - 10.3 AdaLoRA 缺点是什么？
+  - 参考
+
+### 七、[【关于 LLMs】那些你不知道的事](https://articles.zsxq.com/id_0dwe6olrn4uw.html)
+
+- [【关于 GPT / GPT-2 / GPT-3 / InstructGPT 】那些你不知道的事](https://articles.zsxq.com/id_ik77qgnqtk6w.html)
+- [【每日一面】现在达模型LLM，微调方式有哪些？各有什么优缺点？](https://articles.zsxq.com/id_i6uv0mtg4mah.html)
+- [【NLP百面百搭】LLM若干问题备忘](https://articles.zsxq.com/id_gon71zogm6k9.html)
+- [【NLP百面百搭】为什么现在的LLM都是Decoder only的架构？](https://articles.zsxq.com/id_wgoabuow5m1t.html)
+- [【关于 GLM：ChatGLM的基座模型】那些你不知道的事](https://articles.zsxq.com/id_bwx8btw6h2p1.html)
+  - 一、GLM 的 核心是什么？
+  - 二、GLM 的 模型架构是什么？
+  - 三、GLM 如何进行 多任务训练？
+  - 四、在进行 NLG 时， GLM 如何保证 生成长度的未知性？
+  - 五、GLM 的 多任务微调方式有什么差异？
+  - 六、GLM 的 多任务微调方式有什么优点？
+
+### 八、 [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
+
+- [【关于 AIGC】那些你不知道的事](https://articles.zsxq.com/id_27ik7238mia9.html)
 
 ### 四、[【关于 NLP 学习算法】那些你不知道的事](NLPinterview)
 
