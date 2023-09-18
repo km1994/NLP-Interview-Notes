@@ -22,6 +22,9 @@
 > 
 > **推广搜 军火库**：https://github.com/km1994/recommendation_advertisement_search
 
+<img src="img/微信截图_20230918094559.png" width="50%" >
+> 【关于 NLP】百问百答 面试交流群 (注：人满 可 添加 小编wx：yzyykm666 加群！)
+
 ![](img/微信截图_20210301212242.png)
 > **关注公众号 【关于NLP那些你不知道的事】 加入 【NLP && 推荐学习群】一起学习！！！**
 
