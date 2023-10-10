@@ -499,6 +499,8 @@
 - 五、FAQ 标准问题库答案优化篇
   - 5.1 FAQ 标准问题库答案如何优化？
 
+> [点击查看答案](https://articles.zsxq.com/id_vtkf1m0gq2or.html)
+
 ##### 4.6.2 问答系统工具篇 常见面试篇
 
 - [Faiss 常见面试篇](NLPinterview/QA/Faiss/)
@@ -551,8 +553,6 @@
       - 3.6.3 NLG（自然语言生成）的实现方式？
 
 > [点击查看答案](https://articles.zsxq.com/id_kz2t0faje3jw.html)
-
-- [RASA 常见面试篇](NLPinterview/DialogueSystem/Rasa/)
 
 #### 4.8 知识图谱 常见面试篇
 
@@ -878,7 +878,7 @@
   - 2.8 对抗增强篇
     - 2.8.1 什么是对抗增强？
   
-> [点击查看答案](https://articles.zsxq.com/id_i5m3wfkdzwq9.html)
+> [点击查看答案](https://articles.zsxq.com/id_e043c3q53sbc.html)
 
 #### 5.1.2 [主动学习 面试篇](https://articles.zsxq.com/id_6sj7him8b4p1.html)
   - 一、动机篇
@@ -1119,7 +1119,7 @@
 - GLM 的 多任务微调方式有什么差异？
 - GLM 的 多任务微调方式有什么优点？
 
-> [点击查看答案](https://articles.zsxq.com/id_qicqgdrsebpl.html)
+> [点击查看答案](https://articles.zsxq.com/id_bwx8btw6h2p1.html)
 
 ## 一、基础算法 常见面试篇
 
@@ -1173,6 +1173,8 @@
       - 2.3.2 为什么选 relu 函数 作为激活函数？
       - 2.3.3 relu 函数 有什么缺点？
   - 三、激活函数选择篇
+
+
 - [正则化常见面试篇](https://articles.zsxq.com/id_g6mir08c0s8d.html)
   - 一、L0，L1，L2正则化 篇
     - 1.1 正则化 是什么？
