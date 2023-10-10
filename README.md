@@ -46,7 +46,7 @@
 
 > [点击查看答案](https://articles.zsxq.com/id_gcfcvw10h89u.html)
 
-- [条件随机场（CRF） 常见面试篇](https://articles.zsxq.com/id_gcfcvw10h89u.html)
+- [条件随机场（CRF） 常见面试篇](https://articles.zsxq.com/id_3votd06mbvxv.html)
   - 五、条件随机场（CRF）篇
     - 5.1 CRF 动机篇
       - 5.1.1 HMM 和 MEMM 存在什么问题？
@@ -62,7 +62,7 @@
   - 六、对比篇
     - 6.1 CRF模型 和 HMM和MEMM模型 区别？
 
-> [点击查看答案](https://articles.zsxq.com/id_gcfcvw10h89u.html)
+> [点击查看答案](https://articles.zsxq.com/id_3votd06mbvxv.html)
 
 - [DNN-CRF 常见面试篇](https://articles.zsxq.com/id_8u0rtbsjt64l.html)
   - 一、基本信息
